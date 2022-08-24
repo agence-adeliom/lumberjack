@@ -33,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/hooks/tests/"
+            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/lumberjack-hooks/tests/"
         }
     },
     "replace": {
