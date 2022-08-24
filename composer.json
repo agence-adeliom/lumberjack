@@ -1,0 +1,42 @@
+{
+    "name": "agence-adeliom/lumberjack",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arnaud RITTI",
+            "email": "arnaud.ritti@adeliom.com"
+        }
+    ],
+    "require": {
+        "doctrine/annotations": "^1.6",
+        "php": "^7.2||^8.0",
+        "symfony/dependency-injection": "^5.0",
+        "symfony/http-kernel": "^5.0"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.4",
+        "rareloop/lumberjack-core": "^4.0||^5.0",
+        "roave/security-advisories": "dev-latest",
+        "symplify/monorepo-builder": "^11.1"
+    },
+    "autoload": {
+        "files": [
+            "packages/hooks/src/Helpers/RegisterAnnotations.php",
+            "packages/hooks/src/Helpers/Utils.php"
+        ],
+        "psr-4": {
+            "Adeliom\\Lumberjack\\Hooks\\": "packages/hooks/src",
+            "YourMonorepo\\SecondPackage\\": "packages/second-package/src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/hooks/tests/"
+        }
+    },
+    "replace": {
+        "agence-adeliom/lumberjack-hooks": "self.version",
+        "your-monorepo/second-package": "self.version"
+    },
+    "minimum-stability": "stable"
+}

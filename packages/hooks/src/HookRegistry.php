@@ -1,0 +1,103 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Adeliom\Lumberjack\Hooks;
+
+use Adeliom\Lumberjack\Hooks\Exceptions\InvalidCallableException;
+use Adeliom\Lumberjack\Hooks\Models\Action;
+use Adeliom\Lumberjack\Hooks\Parsers\AnnotationParser;
+use Adeliom\Lumberjack\Hooks\Parsers\HookParser;
+
+/**
+ * Reads the annotations and registers the hooks.
+ */
+final class HookRegistry
+{
+    /**
+     * Bootstrap a list of classes.
+     *
+     * @param array             $classes
+     * @param HookRegistry|null $registry
+     */
+    public static function bootstrapClasses(array $classes, ?HookRegistry $registry = null)
+    {
+        $classes = array_filter($classes, 'class_exists');
+        $registry = $registry ?: new self;
+
+        foreach ($classes as $class) {
+            $registry->bootstrap($class);
+        }
+    }
+
+    /**
+     * Initialize a class to "listen" for annotations.
+     *
+     * @param object|string $object
+     */
+    public function bootstrap($object)
+    {
+        if (!(is_string($object) && class_exists($object)) && !is_object($object)) {
+            return;
+        }
+
+        $methods = (array) get_class_methods($object);
+        foreach ($this->annotatedMethods($object, $methods) as $method) {
+            try {
+                $this->register([$object, $method]);
+            } catch (\Exception $exception) {
+                if (function_exists('wp_die')) {
+                    wp_die('Could not register hooks with annotations. Please submit an issue.');
+                } else {
+                    error_log('Could not register hooks with annotations. Please submit an issue.');
+                }
+            }
+        }
+    }
+
+    /**
+     * Parse the annotations and trigger the functions of the respective models.
+     *
+     * @param array $callable
+     *
+     * @throws \Doctrine\Common\Annotations\AnnotationException
+     * @throws \Adeliom\Lumberjack\Hooks\Exceptions\InvalidCallableException
+     * @throws \Adeliom\Lumberjack\Hooks\Exceptions\TriggerNotFoundException
+     */
+    public function register(array $callable)
+    {
+        $parser = new HookParser($callable);
+        $modelsCollection = $parser->getModels();
+
+        foreach ($modelsCollection as $model) {
+            $model->trigger();
+        }
+    }
+
+    /**
+     * Generator to retrieve methods with docblocks.
+     *
+     * @param mixed $class
+     * @param array $methods
+     *
+     * @return \Generator
+     */
+    private function annotatedMethods($class, array $methods)
+    {
+        foreach ($methods as $key => $method) {
+            try {
+                $reflectionMethod = new \ReflectionMethod($class, $method);
+            } catch (\ReflectionException $exception) {
+                continue;
+            }
+
+            if (PHP_VERSION_ID >= 80000){
+                if (!empty($reflectionMethod->getAttributes())) {
+                    yield $key => $method;
+                }
+            }else if ($reflectionMethod->getDocComment() !== false) {
+                yield $key => $method;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+name: Unit Tests
+
+on:
+  pull_request: null
+  push: null
+
+jobs:
+  unit_tests:
+    name: PHP tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-versions: [ '7.4', '8.0', '8.1' ]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          coverage: none
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+      - name: Run test suite
+        run: php vendor/bin/phpunit
