@@ -1,0 +1,28 @@
+{
+    "name": "agence-adeliom/lumberjack-webpack",
+    "require": {
+        "php": "^7.2||^8.0"
+    },
+    "require-dev": {
+        "rareloop/lumberjack-core": "^4.0||^5.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adeliom\\Lumberjack\\Webpack\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Adeliom\\Lumberjack\\Webpack\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
