@@ -15,6 +15,7 @@
     },
     "require-dev": {
         "nunomaduro/phpinsights": "^2.4",
+        "phpunit/phpunit": "^9.5",
         "rareloop/lumberjack-core": "^4.0||^5.0",
         "roave/security-advisories": "dev-latest",
         "symplify/monorepo-builder": "^11.1"
@@ -38,5 +39,11 @@
         "agence-adeliom/lumberjack-hooks": "self.version",
         "your-monorepo/second-package": "self.version"
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }
