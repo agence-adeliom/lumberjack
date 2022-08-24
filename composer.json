@@ -22,11 +22,11 @@
     },
     "autoload": {
         "files": [
-            "packages/hooks/src/Helpers/RegisterAnnotations.php",
-            "packages/hooks/src/Helpers/Utils.php"
+            "packages/lumberjack-hooks/src/Helpers/RegisterAnnotations.php",
+            "packages/lumberjack-hooks/src/Helpers/Utils.php"
         ],
         "psr-4": {
-            "Adeliom\\Lumberjack\\Hooks\\": "packages/hooks/src",
+            "Adeliom\\Lumberjack\\Hooks\\": "packages/lumberjack-hooks/src",
             "YourMonorepo\\SecondPackage\\": "packages/second-package/src"
         }
     },
