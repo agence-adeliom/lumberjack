@@ -39,6 +39,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           coverage: none
+      - run: rm composer.lock
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
       - run: vendor/bin/monorepo-builder localize-composer-paths packages/${{ matrix.package }}/composer.json --ansi
