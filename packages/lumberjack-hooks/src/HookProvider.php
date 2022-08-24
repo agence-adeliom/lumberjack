@@ -5,7 +5,7 @@ namespace Adeliom\Lumberjack\Hooks;
 use Rareloop\Lumberjack\Config;
 use Rareloop\Lumberjack\Providers\ServiceProvider;
 
-class HookProvider extends ServiceProvider
+final class HookProvider extends ServiceProvider
 {
     /**
      * Bind HookRegistry into the container
