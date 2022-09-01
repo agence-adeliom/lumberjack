@@ -4,7 +4,6 @@ namespace Adeliom\Lumberjack\Webpack;
 
 use Blast\Facades\AbstractFacade;
 
-
 /**
  * @method static array jsFiles(string $entrypoint)
  * @method static array cssFiles(string $entrypoint)

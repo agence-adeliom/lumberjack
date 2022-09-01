@@ -5,7 +5,7 @@ namespace Adeliom\Lumberjack\Cron;
 use Rareloop\Lumberjack\Config;
 use Rareloop\Lumberjack\Providers\ServiceProvider;
 
-final class CronProvider extends ServiceProvider
+class CronProvider extends ServiceProvider
 {
     /**
      * Register all cronjob listed into the config file

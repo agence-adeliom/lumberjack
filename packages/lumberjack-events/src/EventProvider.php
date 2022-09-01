@@ -6,7 +6,7 @@ use Brick\Event\EventDispatcher;
 use Rareloop\Lumberjack\Config;
 use Rareloop\Lumberjack\Providers\ServiceProvider;
 
-final class CronProvider extends ServiceProvider
+class EventProvider extends ServiceProvider
 {
     /**
      * Bind the EventDispatcher into the container

@@ -20,7 +20,7 @@ class RegisterTest extends TestCase
     public function test_action_annotation_on_method()
     {
         $output = $this->registerHook(FooClass::class, 'foo5');
-        
+
         $this->assertEquals($this->generateExpectedActionOrFilter('init', 'Foo'), $output);
     }
 
@@ -49,14 +49,14 @@ class RegisterTest extends TestCase
     public function test_with_multiple_annotations_in_method()
     {
         $output = $this->registerHook(FooClass::class, 'foo');
-        
+
         $expected = $this->generateExpectedActionOrFilter('init', 'Foo', 'add_action', 99, 2) .
             $this->generateExpectedActionOrFilter('wp_title', 'Foo', 'add_filter') .
             $this->generateExpectedShortcode('my_shortcode', 'Foo');
 
         $this->assertEquals($expected, $output);
     }
-    
+
     public function test_wiring_up_class_via_constructor()
     {
         $hookRegistrar = $this->hookRegistrar;
@@ -73,7 +73,7 @@ class RegisterTest extends TestCase
             $this->generateExpectedShortcode('my_shortcode', 'Foo') .
             $this->generateExpectedShortcode('cool_shortcode', 'Bar') .
             $this->generateExpectedActionOrFilter('wp_title', 'Baz', 'add_filter', 99, 2);
-        
+
         $this->assertEquals($expected, $output);
     }
 }

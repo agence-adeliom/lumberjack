@@ -1,11 +1,11 @@
 {
     "name": "agence-adeliom/lumberjack-events",
     "require": {
-        "php": "^7.2||^8.0",
-        "brick/event": "^0.1.1"
+        "php": ">=8.0.2",
+        "brick/event": "^0.1.1",
+        "rareloop/lumberjack-core": "^5.0"
     },
     "require-dev": {
-        "rareloop/lumberjack-core": "^4.0||^5.0",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {

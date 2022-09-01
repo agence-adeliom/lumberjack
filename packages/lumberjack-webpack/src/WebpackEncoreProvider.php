@@ -2,7 +2,8 @@
 
 namespace Adeliom\Lumberjack\Webpack;
 
-use PhpCsFixer\Config;
+use Rareloop\Lumberjack\Config;
+use Rareloop\Lumberjack\Facades\Config as ConfigFacade;
 use Rareloop\Lumberjack\Providers\ServiceProvider;
 
 class WebpackEncoreProvider extends ServiceProvider
@@ -12,7 +13,7 @@ class WebpackEncoreProvider extends ServiceProvider
      */
     public function register()
     {
-        $directory = config("webpack.directory");
+        $directory = ConfigFacade::get("webpack.directory");
         $webpackEncore = new AssetManager(sprintf('%s/%s', get_template_directory(), $directory));
         $this->app->bind(WebpackEncore::accessor(), $webpackEncore);
         $this->app->bind(WebpackEncore::class, $webpackEncore);

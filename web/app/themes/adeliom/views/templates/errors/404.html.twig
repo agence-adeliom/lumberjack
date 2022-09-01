@@ -1,0 +1,45 @@
+{% extends "layout.html.twig" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('styles/404.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-404">
+
+        <div class="page-404__header">
+            <h1 class="headline">{{ __('Erreur 404') }}</h1>
+            <h2 class="h1">{{ __('Cette page n\'existe plus.') }}</h2>
+        </div>
+
+
+        <div class="container">
+            <div class="w-flex">
+                <div class="page-404__content wysiwyg">
+                    <div class="page-404__column">
+                        <div class="headline">{{ __("Quelques causes probables") }}</div>
+                        <ul class="primary-list">
+                            <li>{{ __("Vous avez mal tapé l'URL dans la barre d'adresse;") }}</li>
+                            <li>{{ __("Vous avez cliqué sur un lien brisé qui pointe vers une page qui n'existe plus;") }}</li>
+                            <li>{{ __("Vous n'avez pas les droits suffisants pour accéder à cette page") }}</li>
+                        </ul>
+                    </div>
+                    <div class="page-404__column">
+                        <div class="headline">{{ __("Pour retrouver votre chemin") }}</div>
+                        <ul class="primary-list">
+                            <li>{{ __("Le plus simple est de repasser par") }} <a class="link"
+                                                                                  href="{{ site.link }}">{{ __("l'accueil") }}</a>
+                            </li>
+                            <li>{{ __("De faire une recherche via notre moteur de recherche") }}</li>
+                            {# <li>{{ __("Ou encore") }} <a class="link" href="{{ link(const_pages.contact.ID) }}">{{ __("nous contacter") }}</a> {{ __("pour nous le signaler.")}}</li> #}
+                            <li>{{ __("Ou encore") }} <a class="link"
+                                                         href="#">{{ __("nous contacter") }}</a> {{ __("pour nous le signaler.") }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

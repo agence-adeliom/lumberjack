@@ -11,7 +11,8 @@ use Adeliom\Lumberjack\Hooks\Models\Shortcode;
 
 class BarClass
 {
-    public function __construct(HookRegistry $hookRegistrar) {
+    public function __construct(HookRegistry $hookRegistrar)
+    {
         $hookRegistrar->bootstrap($this);
     }
 
@@ -23,7 +24,8 @@ class BarClass
     #[Action(tag: 'init', priority: 99, accepted_args: 2)]
     #[Filter(tag: 'wp_title')]
     #[Shortcode(tag: 'my_shortcode')]
-    public static function foo() {
+    public static function foo()
+    {
         return 'Foo';
     }
 
@@ -31,7 +33,8 @@ class BarClass
      * @Shortcode(tag="cool_shortcode")
      */
     #[Shortcode(tag: 'cool_shortcode')]
-    public static function bar() {
+    public static function bar()
+    {
         return 'Bar';
     }
 
@@ -39,7 +42,8 @@ class BarClass
      * @Filter(tag="wp_title", priority= 99, accepted_args=2)
      */
     #[Filter(tag: 'wp_title', priority: 99, accepted_args: 2)]
-    public static function baz() {
+    public static function baz()
+    {
         return 'Baz';
     }
 }

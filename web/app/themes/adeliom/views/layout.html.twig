@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html {{ site.language_attributes }}>
+
+<head>
+    <title>{{ function('wp_title') }}</title>
+    <meta charset="{{ site.charset }}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="{{ site.pingback_url }}"/>
+
+    {{ function('wp_head') }}
+
+    {% block stylesheet %}{% endblock %}
+
+    {# <script>
+        var GMAPS_API_KEY = "{{ config['gmap'] }}";
+        var URL_AJAX = "{{ function('admin_url', 'admin-ajax.php') }}";
+    </script> #}
+
+</head>
+
+<body class="{{ body_class }}">
+
+<div class="main">
+
+    {% if hide_header is not defined %}
+        {% include 'components/navigations/header.html.twig' %}
+    {% endif %}
+
+    {% block content %}
+        <p>Sorry, no content</p>
+    {% endblock %}
+
+    {% if hide_footer is not defined %}
+        {% include 'components/navigations/footer.html.twig' %}
+    {% endif %}
+
+    {{ function('wp_footer') }}
+
+    {% block javascript %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

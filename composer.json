@@ -1,26 +1,52 @@
 {
-    "name": "agence-adeliom/lumberjack",
+    "name": "agence-adeliom/wordpress-template",
+    "description": "A Lumberjack template",
+    "type": "project",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Arnaud RITTI",
-            "email": "arnaud.ritti@adeliom.com"
-        }
-    ],
     "require": {
+        "php": ">=8.0.2",
+        "ext-json": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "^5.9",
+        "agence-adeliom/acf-icon-picker": "^1.0",
         "brick/event": "^0.1.1",
+        "composer/installers": "^1.0 | ^2.0",
         "doctrine/annotations": "^1.6",
-        "php": "^7.2||^8.0",
-        "symfony/dependency-injection": "^5.0",
-        "symfony/http-kernel": "^5.0"
+        "koodimonni-language/fr_fr": "*",
+        "oscarotero/env": "^2.1",
+        "rareloop/lumberjack-core": "^5.0",
+        "rareloop/lumberjack-email": "^1.4",
+        "rareloop/lumberjack-validation": "^1.1",
+        "rbdwllr/wordpress-salts-generator": "^0.2.0",
+        "roots/bedrock-autoloader": "^1.0",
+        "roots/bedrock-disallow-indexing": "^2.0",
+        "roots/wordpress": "^6.0",
+        "roots/wp-config": "^1.0",
+        "roots/wp-password-bcrypt": "^1.0",
+        "roots/wp-stage-switcher": "^2.1",
+        "stayallive/wp-sentry": "*",
+        "symfony/dotenv": "^6.0",
+        "symfony/polyfill-php80": "^1.26",
+        "symfony/polyfill-php81": "^1.26",
+        "vinkla/extended-acf": "^13.0",
+        "vlucas/phpdotenv": "^5.3",
+        "wp-cli/wp-cli-bundle": "*",
+        "wpackagist-plugin/disable-comments": "*",
+        "wpackagist-plugin/wordfence": "*",
+        "wpackagist-plugin/worker": "*"
     },
     "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "deployer/deployer": "^7",
+        "friendsofphp/php-cs-fixer": "^3.8",
         "nunomaduro/phpinsights": "^2.4",
-        "phpunit/phpunit": "^9.5",
-        "rareloop/lumberjack-core": "^4.0||^5.0",
+        "overtrue/phplint": "^4.3",
+        "phpstan/phpstan": "^1.6",
+        "psy/psysh": "^0.11.8",
+        "rector/rector": "^0.14.0",
         "roave/security-advisories": "dev-latest",
-        "squizlabs/php_codesniffer": "^3.7",
-        "symplify/monorepo-builder": "^11.1"
+        "squizlabs/php_codesniffer": "^3.5",
+        "symplify/monorepo-builder": "^11.1",
+        "wp-coding-standards/wpcs": "^2.3"
     },
     "autoload": {
         "files": [
@@ -28,30 +54,127 @@
             "packages/lumberjack-hooks/src/Helpers/Utils.php"
         ],
         "psr-4": {
+            "Adeliom\\Installer\\": ".installer",
+            "Adeliom\\Lumberjack\\Admin\\": "packages/lumberjack-admin/src",
+            "Adeliom\\Lumberjack\\Blocks\\": "packages/lumberjack-blocks/src",
             "Adeliom\\Lumberjack\\Cron\\": "packages/lumberjack-cron/src",
             "Adeliom\\Lumberjack\\Event\\": "packages/lumberjack-events/src",
             "Adeliom\\Lumberjack\\Hooks\\": "packages/lumberjack-hooks/src",
-            "YourMonorepo\\SecondPackage\\": "packages/second-package/src"
+            "Adeliom\\Lumberjack\\Pagination\\": "packages/lumberjack-pagination/src",
+            "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src",
+            "Adeliom\\Lumberjack\\Webpack\\": "packages/lumberjack-webpack/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Adeliom\\Lumberjack\\Cron\\Tests\\": "packages/lumberjack-cron/tests/",
             "Adeliom\\Lumberjack\\Event\\Tests\\": "packages/lumberjack-events/tests/",
-            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/lumberjack-hooks/tests/"
+            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/lumberjack-hooks/tests/",
+            "Adeliom\\Lumberjack\\Webpack\\Tests\\": "packages/lumberjack-webpack/tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://auth-acf-composer-proxy.pivvenit.net/wordpress-muplugin/"
+        },
+        {
+            "type": "composer",
+            "url": "https://gf-composer-proxy.arnaud-ritti.workers.dev/wordpress-muplugin/"
+        },
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        },
+        {
+            "type": "composer",
+            "url": "https://wp-languages.github.io",
+            "only": [
+                "koodimonni-language/*",
+                "koodimonni-plugin-language/*",
+                "koodimonni-theme-language/*"
+            ]
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "ffraenz/private-composer-installer": true,
+            "composer/installers": true,
+            "koodimonni/composer-dropin-installer": true,
+            "roots/wordpress-core-installer": true,
+            "pivvenit/acf-pro-installer": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "arnaud-ritti/gravityforms-installer": true
+        }
+    },
+    "extra": {
+        "dropin-paths": {
+            "web/app/languages/": [
+                "vendor:koodimonni-language"
+            ],
+            "web/app/languages/plugins/": [
+                "vendor:koodimonni-plugin-language"
+            ],
+            "web/app/languages/themes/": [
+                "vendor:koodimonni-theme-language"
+            ]
+        },
+        "installer-paths": {
+            "web/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin",
+                "roots/wp-stage-switcher",
+                "soberwp/intervention",
+                "agence-adeliom/acf-icon-picker"
+            ],
+            "web/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "web/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "web/wp"
+    },
+    "scripts": {
+        "symfony:dump-env": [
+            "Adeliom\\Installer\\Install::dumpEnv"
+        ],
+        "setup": [
+            "Adeliom\\Installer\\Install::buildEnv"
+        ],
+        "package_keys": [
+            "Adeliom\\Installer\\Install::setPackageKeys"
+        ],
+        "pre-install-cmd": [
+            "@package_keys"
+        ],
+        "post-install-cmd": [
+            "@setup"
+        ],
+        "test": [
+            "phplint",
+            "phpcbf",
+            "phpcs",
+            "phpstan"
+        ]
+    },
     "replace": {
+        "agence-adeliom/lumberjack-admin": "self.version",
+        "agence-adeliom/lumberjack-blocks": "self.version",
         "agence-adeliom/lumberjack-cron": "self.version",
         "agence-adeliom/lumberjack-events": "self.version",
         "agence-adeliom/lumberjack-hooks": "self.version",
-        "your-monorepo/second-package": "self.version"
+        "agence-adeliom/lumberjack-pagination": "self.version",
+        "agence-adeliom/lumberjack-taxonomy": "self.version",
+        "agence-adeliom/lumberjack-webpack": "self.version"
     },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

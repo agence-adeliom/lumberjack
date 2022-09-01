@@ -23,7 +23,7 @@ final class HookRegistry
     public static function bootstrapClasses(array $classes, ?HookRegistry $registry = null)
     {
         $classes = array_filter($classes, 'class_exists');
-        $registry = $registry ?: new self;
+        $registry = $registry ?: new self();
 
         foreach ($classes as $class) {
             $registry->bootstrap($class);
@@ -91,11 +91,11 @@ final class HookRegistry
                 continue;
             }
 
-            if (PHP_VERSION_ID >= 80000){
+            if (PHP_VERSION_ID >= 80000) {
                 if (!empty($reflectionMethod->getAttributes())) {
                     yield $key => $method;
                 }
-            }else if ($reflectionMethod->getDocComment() !== false) {
+            } elseif ($reflectionMethod->getDocComment() !== false) {
                 yield $key => $method;
             }
         }

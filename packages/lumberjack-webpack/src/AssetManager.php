@@ -171,7 +171,7 @@ class AssetManager
         $files = $this->cssFiles($entrypoint);
         foreach ($files as $file) {
             if (empty(static::$filesMap[$file])) {
-                printf('<link rel="stylesheet" href="%s">',  self::getUrl($file));
+                printf('<link rel="stylesheet" href="%s">', self::getUrl($file));
                 static::$filesMap[$file] = true;
             }
         }

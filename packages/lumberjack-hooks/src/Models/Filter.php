@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Adeliom\Lumberjack\Hooks\Models;
 
 use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
+
 use function Adeliom\Lumberjack\Hooks\Helpers\get;
+
 use Adeliom\Lumberjack\Hooks\Exceptions\ArgumentNotFoundException;
 use Attribute;
 

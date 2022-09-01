@@ -16,7 +16,7 @@ abstract class TestCase extends PhpUnitTestCase
     {
         parent::setUp();
 
-        $this->hookRegistrar = new HookRegistry;
+        $this->hookRegistrar = new HookRegistry();
     }
 
     protected function registerHook($class, $method, $buffer = true): ?string

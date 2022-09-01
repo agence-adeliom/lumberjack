@@ -1,0 +1,21 @@
+{
+    "name": "agence-adeliom/lumberjack-blocks",
+    "require": {
+        "php": ">=8.0.2",
+        "rareloop/lumberjack-core": "^5.0",
+        "agence-adeliom/lumberjack-admin": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Adeliom\\Lumberjack\\Blocks\\": "src"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

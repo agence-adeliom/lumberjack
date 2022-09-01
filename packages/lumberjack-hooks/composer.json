@@ -1,11 +1,11 @@
 {
     "name": "agence-adeliom/lumberjack-hooks",
     "require": {
-        "php": "^7.2||^8.0",
-        "doctrine/annotations": "^1.6"
+        "php": ">=8.0.2",
+        "doctrine/annotations": "^1.6",
+        "rareloop/lumberjack-core": "^5.0"
     },
     "require-dev": {
-        "rareloop/lumberjack-core": "^4.0||^5.0",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {

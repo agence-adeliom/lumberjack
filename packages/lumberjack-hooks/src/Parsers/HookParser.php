@@ -47,7 +47,7 @@ class HookParser
      */
     public function getModels(): array
     {
-        if (PHP_VERSION_ID >= 80000){
+        if (PHP_VERSION_ID >= 80000) {
             return array_map(function (\ReflectionAttribute $item) {
                 return ($item->newInstance())->setCallable($this->callable);
             }, $this->reflectionMethod->getAttributes());
@@ -71,10 +71,10 @@ class HookParser
             try {
                 return new ReflectionMethod($class, $method);
             } catch (ReflectionException $exception) {
-                throw new InvalidCallableException;
+                throw new InvalidCallableException();
             }
         } else {
-            throw new InvalidCallableException;
+            throw new InvalidCallableException();
         }
     }
 }
