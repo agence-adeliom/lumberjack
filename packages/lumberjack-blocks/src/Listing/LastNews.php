@@ -2,9 +2,7 @@
 
 namespace App\Blocks;
 
-use Adeliom\WP\Extensions\Blocks\AbstractBlock;
-use App\Enum\GutBlockName;
-use App\Helpers\Gutenberg\GutenbergBlockHelper;
+use Adeliom\Lumberjack\Admin\AbstractBlock;
 use Rareloop\Lumberjack\Post;
 use Traversable;
 use Extended\ACF\ConditionalLogic;
@@ -13,11 +11,6 @@ use Extended\ACF\Fields\Relationship;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\TrueFalse;
 
-/**
- * Class QuoteBlock
- * @see https://github.com/wordplate/extended-acf#fields
- * @package App\FlexibleLayout
- */
 class LastNews extends AbstractBlock
 {
     public function __construct()
@@ -25,10 +18,7 @@ class LastNews extends AbstractBlock
         parent::__construct([
             'title' => __('Dernières actualités'),
             'description' => __("Bloc permettant d'afficher vos dernières actualités publiées"),
-            'category' => GutBlockName::LISTING,
-            'post_types' => GutenbergBlockHelper::commonsTemplate(),
             'mode' => 'edit',
-            'dir' => BlocksTwigPath::LISTING
         ]);
     }
 

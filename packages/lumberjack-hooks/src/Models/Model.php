@@ -12,29 +12,29 @@ abstract class Model
     /**
      * @var string
      */
-    protected $tag;
+    protected string $tag;
 
     /**
      * @var string
      */
-    protected $handler;
+    protected string $handler;
 
     /**
      * @var array
      */
-    protected $callable;
+    protected array $callable;
 
     /**
      * @var array
      */
-    protected $requiredArguments = ['tag'];
+    protected array $requiredArguments = ['tag'];
 
     /**
      * Trigger the WordPress function to handle the registration.
      *
      * @throws TriggerNotFoundException
      */
-    public function trigger()
+    public function trigger(): void
     {
         if (!$this->handler && !function_exists($this->handler)) {
             throw new TriggerNotFoundException("Function '{$this->handler}' could not be executed");
@@ -60,11 +60,9 @@ abstract class Model
     /**
      * Determine if the required arguments set in requiredArguments are present.
      *
-     * @param array $data
-     *
      * @throws ArgumentNotFoundException
      */
-    protected function validateFields()
+    protected function validateFields(): void
     {
         foreach ($this->requiredArguments as $argument) {
             if (empty($this->{$argument})) {

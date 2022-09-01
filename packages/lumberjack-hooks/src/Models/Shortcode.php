@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Adeliom\Lumberjack\Hooks\Models;
 
+use Adeliom\Lumberjack\Hooks\Exceptions\ArgumentNotFoundException;
 use Attribute;
 use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
 
@@ -17,14 +18,13 @@ class Shortcode extends Model
     /**
      * @var string
      */
-    protected $handler = 'add_shortcode';
+    protected string $handler = 'add_shortcode';
 
     /**
      * Shortcode constructor.
      *
-     * @param array $data
-     *
-     * @throws \Adeliom\Lumberjack\Hooks\Exceptions\ArgumentNotFoundException
+     * @param string $tag
+     * @throws ArgumentNotFoundException
      */
     public function __construct(string $tag)
     {

@@ -15,7 +15,7 @@ class PaginationViewModel extends ViewModel
     {
         $pagination = PaginatedQueryBuilder::getPagination();
 
-        return new static(
+        return new self(
             $resultsPerPage,
             $forPage,
             $pagination['current'],
@@ -34,6 +34,8 @@ class PaginationViewModel extends ViewModel
             'pages' => $pages,
             'next' => $next,
             'prev' => $prev,
+            'per_page' => $resultsPerPage,
+            'for_page' => $forPage,
         ];
     }
 

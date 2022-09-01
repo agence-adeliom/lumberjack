@@ -10,7 +10,7 @@ use Adeliom\Lumberjack\Hooks\Tests\Data\FooClass;
 
 class RegisterTest extends TestCase
 {
-    public function test_if_functions_are_reachable()
+    public function test_if_functions_are_reachable(): void
     {
         $this->assertTrue(function_exists('add_filter'));
         $this->assertTrue(function_exists('add_action'));

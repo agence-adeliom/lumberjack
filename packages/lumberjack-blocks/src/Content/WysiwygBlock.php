@@ -2,18 +2,10 @@
 
 namespace App\Blocks;
 
-use Adeliom\WP\Extensions\Blocks\AbstractBlock;
-use App\Admin\Utils\AcfUtils;
-use App\Enum\GutBlockName;
-use App\Helpers\Gutenberg\GutenbergBlockHelper;
+use Adeliom\Lumberjack\Admin\AbstractBlock;
 use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\WysiwygEditor;
 
-/**
- * Class WysiwygBlock
- * @see https://github.com/wordplate/extended-acf#fields
- * @package App\Admin
- */
 class WysiwygBlock extends AbstractBlock
 {
     public function __construct()
@@ -21,10 +13,7 @@ class WysiwygBlock extends AbstractBlock
         parent::__construct([
             'title' => __('Texte centré'),
             'description' => __('Bloc de texte centré'),
-            'category' => GutBlockName::CONTENT,
-            'post_types' => GutenbergBlockHelper::commonsTemplate(),
             'mode' => 'edit',
-            'dir' => BlocksTwigPath::CONTENT
         ]);
     }
 

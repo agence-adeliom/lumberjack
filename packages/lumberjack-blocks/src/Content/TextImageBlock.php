@@ -2,10 +2,7 @@
 
 namespace App\Blocks;
 
-use Adeliom\WP\Extensions\Blocks\AbstractBlock;
-use App\Admin\Utils\AcfUtils;
-use App\Enum\GutBlockName;
-use App\Helpers\Gutenberg\GutenbergBlockHelper;
+use Adeliom\Lumberjack\Admin\AbstractBlock;
 use Traversable;
 use Extended\ACF\Fields\Image;
 use Extended\ACF\Fields\RadioButton;
@@ -13,11 +10,6 @@ use Extended\ACF\Fields\Tab;
 use Extended\ACF\Fields\Text;
 use Extended\ACF\Fields\WysiwygEditor;
 
-/**
- * Class TextImageBlock
- * @see https://github.com/wordplate/extended-acf#fields
- * @package App\FlexibleLayout
- */
 class TextImageBlock extends AbstractBlock
 {
     public function __construct()
@@ -25,10 +17,7 @@ class TextImageBlock extends AbstractBlock
         parent::__construct([
             'title' => __('Texte + média'),
             'description' => __('Description : Bloc avec texte accolé à une image'),
-            'category' => GutBlockName::CONTENT,
-            'post_types' => GutenbergBlockHelper::commonsTemplate(),
             'mode' => 'edit',
-            'dir' => BlocksTwigPath::CONTENT
         ]);
     }
 

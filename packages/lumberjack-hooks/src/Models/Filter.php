@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Adeliom\Lumberjack\Hooks\Models;
 
 use Doctrine\Common\Annotations\Annotation\NamedArgumentConstructor;
-
-use function Adeliom\Lumberjack\Hooks\Helpers\get;
-
 use Adeliom\Lumberjack\Hooks\Exceptions\ArgumentNotFoundException;
 use Attribute;
 
@@ -31,13 +28,14 @@ class Filter extends Model
     /**
      * @var string
      */
-    protected $handler = 'add_filter';
+    protected string $handler = 'add_filter';
 
     /**
      * Filter constructor.
      *
-     * @param array $data
-     *
+     * @param string $tag
+     * @param int $priority
+     * @param int $accepted_args
      * @throws ArgumentNotFoundException
      */
     public function __construct(string $tag, int $priority = 10, int $accepted_args = 1)

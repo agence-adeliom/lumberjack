@@ -25,10 +25,10 @@ function get(array $array, string $key, $default = null)
 /**
  * Get the class "basename" of the given object / class.
  *
- * @param  string|object $class
+ * @param object|string $class
  * @return string
  */
-function class_basename(string $class): string
+function class_basename($class): string
 {
     $class = is_object($class) ? get_class($class) : $class;
 

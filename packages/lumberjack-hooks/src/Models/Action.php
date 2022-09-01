@@ -17,5 +17,5 @@ class Action extends Filter
     /**
      * @var string
      */
-    protected $handler = 'add_action';
+    protected string $handler = 'add_action';
 }

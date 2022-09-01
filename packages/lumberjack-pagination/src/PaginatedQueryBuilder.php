@@ -9,9 +9,7 @@ use Timber\Timber;
 
 class PaginatedQueryBuilder extends QueryBuilder
 {
-    private $searchTerm;
-    private $page;
-    protected $postClass = Post::class;
+    private ?int $page;
 
     public function getParameters(): array
     {
@@ -27,7 +25,7 @@ class PaginatedQueryBuilder extends QueryBuilder
     /**
      * Use this instead of get()
      */
-    public function paginate($perPage = 10, $page = null): Collection
+    public function paginate(int $perPage = 10, ?int $page = null): Collection
     {
         global $paged;
 
@@ -47,14 +45,14 @@ class PaginatedQueryBuilder extends QueryBuilder
         return $this->get();
     }
 
-    public function page($page)
+    public function page(int $page)
     {
         $this->page = $page;
 
         return $this;
     }
 
-    public static function getPagination($prefs = []): array
+    public static function getPagination(array $prefs = []): array
     {
         return Timber::get_pagination($prefs);
     }

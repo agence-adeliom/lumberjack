@@ -2,16 +2,9 @@
 
 namespace App\Blocks;
 
-use Adeliom\WP\Extensions\Blocks\AbstractBlock;
-use App\Enum\GutBlockName;
-use App\Helpers\Gutenberg\GutenbergBlockHelper;
+use Adeliom\Lumberjack\Admin\AbstractBlock;
 use Extended\ACF\Fields\Image;
 
-/**
- * Class ImageFullBlock
- * @see https://github.com/wordplate/extended-acf#fields
- * @package App\FlexibleLayout
- */
 class ImageFullBlock extends AbstractBlock
 {
     public function __construct()

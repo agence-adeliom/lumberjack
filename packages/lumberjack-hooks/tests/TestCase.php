@@ -10,7 +10,7 @@ abstract class TestCase extends PhpUnitTestCase
     /**
      * @var HookRegistry
      */
-    protected $hookRegistrar;
+    protected HookRegistry $hookRegistrar;
 
     protected function setUp(): void
     {
@@ -36,6 +36,9 @@ abstract class TestCase extends PhpUnitTestCase
         return null;
     }
 
+    /**
+     * @throws \JsonException
+     */
     public function generateExpectedActionOrFilter($tag, $output, $function = 'add_action', $priority = 10, $acceptedArgs = 1): string
     {
         $expected = [
@@ -46,10 +49,13 @@ abstract class TestCase extends PhpUnitTestCase
             'output' => $output,
         ];
 
-        return json_encode($expected);
+        return json_encode($expected, JSON_THROW_ON_ERROR);
     }
 
-    public function generateExpectedShortcode($tag, $output)
+    /**
+     * @throws \JsonException
+     */
+    public function generateExpectedShortcode($tag, $output): bool|string
     {
         $expected = [
             'function' => 'add_shortcode',
@@ -57,6 +63,6 @@ abstract class TestCase extends PhpUnitTestCase
             'output' => $output,
         ];
 
-        return json_encode($expected);
+        return json_encode($expected, JSON_THROW_ON_ERROR);
     }
 }

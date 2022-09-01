@@ -21,7 +21,7 @@ class WebpackEncoreProvider extends ServiceProvider
 
     public function boot(Config $config): void
     {
-        add_filter('timber/twig', function ($twig) use ($config) {
+        add_filter('timber/twig', function ($twig) {
             $twig->addExtension(new WebpackEncoreExtension());
             return $twig;
         });

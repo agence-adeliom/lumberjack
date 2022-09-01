@@ -10,6 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Rareloop\Lumberjack\Exceptions\Handler as LumberjackHandler;
 use Rareloop\Lumberjack\Facades\Config;
 use Rareloop\Lumberjack\Facades\Log;
+use Rareloop\Lumberjack\Http\Responses\TimberResponse;
 use Timber\Timber;
 
 class Handler extends LumberjackHandler
@@ -37,7 +38,7 @@ class Handler extends LumberjackHandler
             if (Config::get('app.debug') === false) {
                 $data = Timber::get_context();
                 $data['exception'] = $e;
-                return view('templates/errors/500.html.twig', $data, 500);
+                return new TimberResponse('templates/errors/500.html.twig', $data, 500);
             }
         } catch (Exception $exception) {
             // Something went wrong in the custom renderer, log it and show the default rendering

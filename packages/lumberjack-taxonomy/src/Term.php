@@ -4,6 +4,7 @@ namespace Adeliom\Lumberjack\Taxonomy;
 
 use Adeliom\Lumberjack\Taxonomy\Exceptions\TaxonomyRegistrationException;
 use Spatie\Macroable\Macroable;
+use Tightenco\Collect\Support\Collection;
 use Timber\Term as TimberTerm;
 use Timber\Timber;
 
@@ -48,9 +49,9 @@ class Term extends TimberTerm
      * First parameter of the `register_taxonomy` function:
      * https://developer.wordpress.org/reference/functions/register_taxonomy/
      *
-     * @return string
+     * @return string|null
      */
-    public static function getTaxonomyType()
+    public static function getTaxonomyType(): ?string
     {
         return null;
     }
@@ -62,7 +63,7 @@ class Term extends TimberTerm
      *
      * @return array|null
      */
-    public static function getTaxonomyObjectTypes()
+    public static function getTaxonomyObjectTypes(): ?array
     {
         return ['post'];
     }
@@ -74,7 +75,7 @@ class Term extends TimberTerm
      *
      * @return array|null
      */
-    protected static function getTaxonomyConfig()
+    protected static function getTaxonomyConfig(): ?array
     {
         return null;
     }
@@ -83,8 +84,9 @@ class Term extends TimberTerm
      * Register this PostType with WordPress
      *
      * @return void
+     * @throws TaxonomyRegistrationException
      */
-    public static function register()
+    public static function register(): void
     {
         $taxonomyType = static::getTaxonomyType();
         $taxonomyObjectTypes = static::getTaxonomyObjectTypes();
@@ -108,11 +110,11 @@ class Term extends TimberTerm
     /**
      * Get all terms of this taxonomy
      *
-     * @param  string $orderby Field(s) to order terms by (defaults to term_order)
-     * @param  string $order Whether to order terms in ascending or descending order (defaults to ASC)
-     * @return Illuminate\Support\Collection
+     * @param string $orderby Field(s) to order terms by (defaults to term_order)
+     * @param string $order Whether to order terms in ascending or descending order (defaults to ASC)
+     * @return Collection
      */
-    public static function all($orderby = 'term_order', $order = 'ASC')
+    public static function all(string $orderby = 'term_order', string $order = 'ASC'): Collection
     {
         $order = strtoupper($order);
 
@@ -129,28 +131,28 @@ class Term extends TimberTerm
      * Convenience function that takes a standard set of WP_Term_Query arguments but mixes it with
      * arguments that mean we're selecting the right taxonomy type
      *
-     * @param  array $args standard WP_Term_Query array
-     * @return Illuminate\Support\Collection
+     * @param array|null $args standard WP_Term_Query array
+     * @return Collection
      */
-    public static function query($args = null)
+    public static function query(?array $args = null): Collection
     {
         $args = is_array($args) ? $args : [];
 
         // Set the correct post type
         $args = array_merge($args, ['taxonomy' => static::getTaxonomyType()]);
 
-        return static::terms($args);
+        return self::terms($args);
     }
 
     /**
      * Raw query function that uses the arguments provided to make a call to Timber::get_terms
      * and casts the returning data in instances of ourself.
      *
-     * @param  array $args standard WP_Query array
-     * @return Illuminate\Support\Collection
+     * @param array|null $args standard WP_Query array
+     * @return Collection
      */
-    private static function terms($args = null)
+    private static function terms(?array $args = null): Collection
     {
-        return collect(Timber::get_terms($args, [], get_called_class()));
+        return collect(Timber::get_terms($args, [], static::class));
     }
 }

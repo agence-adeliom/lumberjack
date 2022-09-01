@@ -5,29 +5,29 @@ namespace Adeliom\Lumberjack\Webpack;
 class AssetManager
 {
     /**
+     * @var mixed
+     */
+    private mixed $directory;
+
+    /**
+     * @var array
+     */
+    private array $entrypoints;
+
+    /**
+     * @var array
+     */
+    public static array $filesMap = [];
+
+    /**
+     * @var array
+     */
+    private array $manifest;
+
+    /**
      * @var string
      */
-    private $directory;
-
-    /**
-     * @var array
-     */
-    private $entrypoints;
-
-    /**
-     * @var array
-     */
-    private static $filesMap = [];
-
-    /**
-     * @var array
-     */
-    private $manifest;
-
-    /**
-     * @var string
-     */
-    private static $DEFAULT_DIRECTORY;
+    private static string $DEFAULT_DIRECTORY;
 
     public function __construct($directory = null)
     {
@@ -44,12 +44,11 @@ class AssetManager
      */
     private function getDefaultDirectory(): string
     {
-        if (isset(self::$DEFAULT_DIRECTORY)) {
+        if (!empty(self::$DEFAULT_DIRECTORY)) {
             return self::$DEFAULT_DIRECTORY;
         }
 
         $templateDirectory = get_template_directory();
-
         return \rtrim($templateDirectory, \DIRECTORY_SEPARATOR) .
             \DIRECTORY_SEPARATOR .
             'build';
@@ -60,9 +59,8 @@ class AssetManager
      */
     private function getEntrypoints(): array
     {
-        if (null === $this->entrypoints) {
-            $file =
-                $this->directory . \DIRECTORY_SEPARATOR . 'entrypoints.json';
+        if (empty($this->entrypoints)) {
+            $file = $this->directory . \DIRECTORY_SEPARATOR . 'entrypoints.json';
             $content = \file_get_contents($file);
             if (false === $content) {
                 throw new \RuntimeException(
@@ -87,7 +85,7 @@ class AssetManager
      */
     private function getManifest(): array
     {
-        if (null === $this->manifest) {
+        if (empty($this->manifest)) {
             $file = $this->directory . \DIRECTORY_SEPARATOR . 'manifest.json';
             $content = \file_get_contents($file);
             if (false === $content) {
