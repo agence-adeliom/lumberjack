@@ -29,7 +29,7 @@ Encore
     // directory where compiled assets will be stored
     .setOutputPath('build/')
     // public path used by the web server to access the output path
-    .setPublicPath(`/app/themes/${theme}/build`)
+    .setPublicPath(`/build`)
     .setManifestKeyPrefix('')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.

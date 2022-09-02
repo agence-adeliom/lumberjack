@@ -5,7 +5,7 @@
         "build:development": "encore dev --progress",
         "build:production": "encore production --progress",
         "build:email": "mjml views/emails/template-default.mjml -o views/emails/template-default.html.twig",
-        "vite:watch": "vite build --watch --debug",
+        "vite:watch": "vite build --watch --mode=dev",
         "vite:dev": "vite dev",
         "vite:build": "tsc && vite build",
         "vite:preview": "vite preview"
@@ -33,6 +33,7 @@
         "ts-loader": "^9.3.1",
         "typescript": "^4.6.4",
         "vite": "^3.0.9",
-        "vite-plugin-live-reload": "^3.0.0"
+        "vite-plugin-live-reload": "^3.0.0",
+        "vite-plugin-symfony": "^0.6.0"
     }
 }

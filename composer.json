@@ -32,9 +32,9 @@
         "vlucas/phpdotenv": "^5.3",
         "wp-cli/wp-cli-bundle": "*",
         "wpackagist-plugin/disable-comments": "*",
+        "wpackagist-plugin/seo-by-rank-math": "*",
         "wpackagist-plugin/wordfence": "*",
-        "wpackagist-plugin/worker": "*",
-        "wpackagist-plugin/seo-by-rank-math": "*"
+        "wpackagist-plugin/worker": "*"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
@@ -58,6 +58,7 @@
         "psr-4": {
             "Adeliom\\Installer\\": ".installer",
             "Adeliom\\Lumberjack\\Admin\\": "packages/lumberjack-admin/src",
+            "Adeliom\\Lumberjack\\Assets\\": "packages/lumberjack-assets/src",
             "Adeliom\\Lumberjack\\Blocks\\": "packages/lumberjack-blocks/src",
             "Adeliom\\Lumberjack\\Cron\\": "packages/lumberjack-cron/src",
             "Adeliom\\Lumberjack\\Event\\": "packages/lumberjack-events/src",
@@ -69,6 +70,7 @@
     },
     "autoload-dev": {
         "psr-4": {
+            "Adeliom\\Lumberjack\\Assets\\Tests\\": "packages/lumberjack-assets/tests/",
             "Adeliom\\Lumberjack\\Cron\\Tests\\": "packages/lumberjack-cron/tests/",
             "Adeliom\\Lumberjack\\Event\\Tests\\": "packages/lumberjack-events/tests/",
             "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/lumberjack-hooks/tests/",
@@ -169,6 +171,7 @@
     },
     "replace": {
         "agence-adeliom/lumberjack-admin": "self.version",
+        "agence-adeliom/lumberjack-assets": "self.version",
         "agence-adeliom/lumberjack-blocks": "self.version",
         "agence-adeliom/lumberjack-cron": "self.version",
         "agence-adeliom/lumberjack-events": "self.version",

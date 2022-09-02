@@ -7,6 +7,7 @@ declare(strict_types=1);
  */
 return [
     "provider" => "vite",
+    //"provider" => "webpack",
     "build_directory" => "build",
     "script_attributes" => [
         "defer" => true,

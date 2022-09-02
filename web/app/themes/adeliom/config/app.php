@@ -37,7 +37,7 @@ return [
         \Adeliom\Lumberjack\Event\EventProvider::class,
         \Adeliom\Lumberjack\Hooks\HookProvider::class,
         \Adeliom\Lumberjack\Taxonomy\CustomTaxonomyServiceProvider::class,
-        \Adeliom\Lumberjack\Webpack\WebpackEncoreProvider::class,
+        \Adeliom\Lumberjack\Assets\AssetsProvider::class,
 
         // Application Providers
         App\Providers\AppServiceProvider::class,

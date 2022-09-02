@@ -1,32 +1,32 @@
 import { defineConfig } from 'vite';
+import symfonyPlugin from "vite-plugin-symfony";
 import glob from "glob";
-
-const path = require('path');
-const theme = path.basename(__dirname);
+import path from "path";
 
 let entries = {
     "tailwind": './assets/tailwind/index.ts'
 };
 
-glob.sync(`./assets/components/**/index.ts`).forEach((jsFile) => {
-    let destFile = jsFile.replace("./assets/", "")
-      .replace(path.extname(jsFile), "")
-      .replace('index', "")
-      .replace(/\/$/, '');
-    Object.assign(entries, {[destFile]: jsFile})
-})
+const getEntries = (entries) => {
+    let globEntries = {};
+    glob.sync(`./assets/components/**/index.ts`).forEach((jsFile) => {
+        let destFile = jsFile.replace("./assets/", "")
+            .replace(path.extname(jsFile), "")
+            .replace('index', "")
+            .replace(/\/$/, '');
+        Object.assign(globEntries, {[destFile]: jsFile})
+    })
+    return Object.assign({}, entries, globEntries);
+}
 
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }) => {
     return {
-        root: './',
-        base: command === 'serve' ? '/' : '/vite/',
-        publicDir: 'resources/static',
+        root: path.resolve(__dirname, ''),
         build: {
+            outDir: 'build',
             manifest: true,
-            outDir: path.resolve(__dirname, ''),
-            emptyOutDir: true,
             rollupOptions: {
-                input: entries,
+                input: getEntries(entries)
             }
         },
         resolve: {
@@ -36,22 +36,20 @@ export default defineConfig(({ command }) => {
             }
         },
         plugins: [
-            {
-                name: 'php',
-                handleHotUpdate({file, server}) {
-                    if (file.endsWith('.php')) {
-                        server.ws.send({type: 'full-reload', path: '*'});
-                    }
-                },
-            },
-            {
-                name: 'twig',
-                handleHotUpdate({file, server}) {
-                    if (file.endsWith('.twig')) {
-                        server.ws.send({type: 'full-reload', path: '*'});
-                    }
-                },
-            },
+            symfonyPlugin({
+                servePublic: false,
+                buildDirectory: 'build',
+                refresh: [
+                    "**/*.php",
+                    "views/**/*.twig"
+                ]
+            })
         ],
+        server: {
+            host: "0.0.0.0",
+            watch: {
+                usePolling: true
+            }
+        }
     }
 });

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Hooks\Admin;
 
+use Adeliom\Lumberjack\Assets\Assets;
 use Adeliom\Lumberjack\Hooks\Models\Action;
 use Adeliom\Lumberjack\Hooks\Models\Filter;
 
@@ -78,6 +79,15 @@ class ThemeHooks
         if (!is_super_admin()) {
             remove_all_actions('admin_notices');
         }
+    }
+
+    /**
+     * @Action("wp_enqueue_scripts")
+     */
+    #[Action("wp_enqueue_scripts")]
+    public static function enqueue(): void
+    {
+        Assets::enqueue("tailwind", "tailwind");
     }
 
     /**

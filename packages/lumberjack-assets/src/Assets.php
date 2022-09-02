@@ -4,13 +4,13 @@ namespace Adeliom\Lumberjack\Assets;
 
 use Blast\Facades\AbstractFacade;
 
+
 /**
- * @method static array jsFiles(string $entrypoint)
- * @method static array cssFiles(string $entrypoint)
- * @method static void scriptTags(string $entrypoint)
- * @method static void linkTags(string $entrypoint)
- * @method static string asset(string $ressource)
- * @method static array enqueue(string $name, string $entrypoint, array $config)
+ * @method static array getJsFiles(string $entryName)
+ * @method static array getCssFiles(string $entryName)
+ * @method static bool entryExists(string $entryName)
+ * @method static string getAsset(string $ressource)
+ * @method static array enqueue(string $name, string $entryName, array $config)
  */
 class Assets extends AbstractFacade
 {

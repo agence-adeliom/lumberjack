@@ -20,8 +20,8 @@ class TagRenderer
         array $defaultLinkAttributes = []
     ) {
         $this->defaultAttributes = $defaultAttributes;
-        $this->defaultScriptAttributes = $defaultScriptAttributes;
-        $this->defaultLinkAttributes = $defaultLinkAttributes;
+        $this->defaultScriptAttributes = array_merge($defaultScriptAttributes, Config::get("assets.script_attributes", []));
+        $this->defaultLinkAttributes = array_merge($defaultLinkAttributes, Config::get("assets.link_attributes", []));
 
         $this->reset();
     }
@@ -104,14 +104,8 @@ class TagRenderer
 
     private function getAssetPath(string $assetPath, string $packageName = null): string
     {
-        if (null === $this->packages) {
-            throw new \Exception('To render the script or link tags, run "composer require symfony/asset".');
-        }
-
-        return $this->packages->getUrl(
-            $assetPath,
-            $packageName
-        );
+        $asset = str_replace(parse_url(get_theme_file_uri(), PHP_URL_PATH), "", $assetPath);
+        return get_theme_file_uri($asset);
     }
 
     private function getEntrypointLookup(): EntrypointLookupInterface

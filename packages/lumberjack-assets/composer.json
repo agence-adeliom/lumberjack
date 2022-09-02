@@ -2,6 +2,7 @@
     "name": "agence-adeliom/lumberjack-assets",
     "require": {
         "php": ">=8.0.2",
+        "ext-dom": "*",
         "rareloop/lumberjack-core": "^5.0"
     },
     "require-dev": {
