@@ -9,7 +9,6 @@ use Rareloop\Lumberjack\Helpers;
 
 class AssetManager
 {
-
     public function getJsFiles(string $entryName): array
     {
         return $this->getEntrypointLookup()->getJavaScriptFiles($entryName);

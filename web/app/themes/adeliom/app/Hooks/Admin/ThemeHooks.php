@@ -87,7 +87,7 @@ class ThemeHooks
     #[Action("wp_enqueue_scripts")]
     public static function enqueue(): void
     {
-        Assets::enqueue("tailwind", "tailwind");
+        //Assets::enqueue("tailwind", "tailwind");
     }
 
     /**

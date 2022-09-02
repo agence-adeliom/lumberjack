@@ -12,7 +12,9 @@
 
     {{ function('wp_head') }}
 
-    {% block stylesheet %}{% endblock %}
+    {% block stylesheet %}
+        {{ entry_link_tags("tailwind") }}
+    {% endblock %}
 
     {# <script>
         var GMAPS_API_KEY = "{{ config['gmap'] }}";
@@ -24,16 +26,6 @@
 <body class="{{ body_class }}">
 
 <div class="main">
-    {{ dump(entry_exists("tailwind")) }}
-
-    {{ dump(asset("images/logo.svg")) }}
-
-    {{ dump(entry_script_tags("tailwind")) }}
-    {{ dump(entry_link_tags("tailwind")) }}
-
-    {{ dump(entry_js_files("tailwind")) }}
-    {{ dump(entry_css_files("tailwind")) }}
-
     {% if hide_header is not defined %}
         {% include 'components/navigations/header.html.twig' %}
     {% endif %}
@@ -49,8 +41,8 @@
     {{ function('wp_footer') }}
 
     {% block javascript %}
+        {{ entry_script_tags("tailwind") }}
     {% endblock %}
-
 </div>
 
 </body>
