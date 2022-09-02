@@ -52,6 +52,7 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     .enablePostCssLoader()
+    .enableIntegrityHashes()
 
     .copyFiles({
         from: './assets/images',
