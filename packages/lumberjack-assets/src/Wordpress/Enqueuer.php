@@ -51,9 +51,13 @@ class Enqueuer
 
         $js = [];
         $css = [];
+        $defaultAttributes = [];
+        if (false !== Config::get("assets.crossorigin", false)) {
+            $defaultAttributes['crossorigin'] = Config::get("assets.crossorigin", false);
+        }
 
         foreach ($jsFiles as $url) {
-            $attributes = Config::get("assets.script_attributes", []);
+            $attributes = array_merge($defaultAttributes, Config::get("assets.script_attributes", []));
             if (isset($integrityHashes[$url])) {
                 $attributes['integrity'] = $integrityHashes[$url];
             }
@@ -65,7 +69,7 @@ class Enqueuer
         }
 
         foreach ($cssFiles as $url) {
-            $attributes = Config::get("assets.link_attributes", []);
+            $attributes = array_merge($defaultAttributes, Config::get("assets.link_attributes", []));
             if (isset($integrityHashes[$url])) {
                 $attributes['integrity'] = $integrityHashes[$url];
             }

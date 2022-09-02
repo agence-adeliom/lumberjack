@@ -5,6 +5,7 @@ use Adeliom\Lumberjack\Assets\Entrypoint\EntrypointLookupInterface;
 use Adeliom\Lumberjack\Assets\Entrypoint\IntegrityDataProviderInterface;
 use Rareloop\Lumberjack\Facades\Config;
 use Rareloop\Lumberjack\Helpers;
+use Symfony\Component\WebLink\Link;
 
 class TagRenderer
 {
@@ -19,6 +20,9 @@ class TagRenderer
         array $defaultScriptAttributes = [],
         array $defaultLinkAttributes = []
     ) {
+        if (false !== Config::get("assets.crossorigin", false)) {
+            $defaultAttributes['crossorigin'] = Config::get("assets.crossorigin", false);
+        }
         $this->defaultAttributes = $defaultAttributes;
         $this->defaultScriptAttributes = array_merge($defaultScriptAttributes, Config::get("assets.script_attributes", []));
         $this->defaultLinkAttributes = array_merge($defaultLinkAttributes, Config::get("assets.link_attributes", []));
@@ -132,5 +136,10 @@ class TagRenderer
             array_keys($attributesMap),
             $attributesMap
         ));
+    }
+
+    private function createLink(string $rel, string $href): Link
+    {
+        return new Link($rel, $href);
     }
 }
