@@ -1,21 +1,15 @@
 name: CI
 
 on:
-  # Trigger on Pull Requests against the master branch.
   pull_request:
     branches:
-      - main
-      - master
-
+      - '*.x'
   pull_request_target:
     branches:
-      - main
-      - master
-  # Trigger on Pull Requests to the master branch.
+      - '*.x'
   push:
     branches:
-      - main
-      - master
+      - '*.x'
 
 concurrency:
   group: ${{ github.sha }}
