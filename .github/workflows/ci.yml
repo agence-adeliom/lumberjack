@@ -22,62 +22,6 @@ permissions:
   contents: write
 
 jobs:
-  auto_label:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
-    env:
-      PR_URL: ${{github.event.pull_request.html_url}}
-      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 'latest'
-
-      - run: composer config http-basic.gf-composer-proxy.arnaud-ritti.workers.dev licensekey ${{secrets.ORG_GRAVITYFORMS_KEY}}
-      - run: composer config http-basic.auth-acf-composer-proxy.pivvenit.net licensekey ${{secrets.ORG_ACF_PRO_KEY}}
-
-      - name: Fetch Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1.3.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Add a label for direct dependencies
-        continue-on-error: true
-        if: startsWith(steps.metadata.outputs.dependency-type, 'direct')
-        run: gh pr edit "$PR_URL" --add-label "direct"
-      - name: Add a label for indirect dependencies
-        continue-on-error: true
-        if: startsWith(steps.metadata.outputs.dependency-type, 'indirect')
-        run: gh pr edit "$PR_URL" --add-label "indirect"
-      - name: Add a label production dependencies
-        continue-on-error: true
-        if: contains(steps.metadata.outputs.dependency-type, 'production')
-        run: gh pr edit "$PR_URL" --add-label "production"
-      - name: Add a label for development dependencies
-        continue-on-error: true
-        if: contains(steps.metadata.outputs.dependency-type, 'development')
-        run: gh pr edit "$PR_URL" --add-label "development"
-      - name: Add a label for security PRs
-        continue-on-error: true
-        if: steps.metadata.outputs.dependency-type.ghsa-id
-        run: gh pr edit "$PR_URL" --add-label "security"
-
-      - name: Get composer infos for ${{ steps.metadata.outputs.dependency-names }}
-        if: steps.metadata.outputs.package-ecosystem == 'composer'
-        id: package_type
-        run: |
-          type=$( composer info ${{ steps.metadata.outputs.dependency-names }} --all --format json --no-ansi | jq '.type' )
-          echo "::set-output name=name::$type"
-
-      - name: Add a label for composer dependencies
-        continue-on-error: true
-        if: steps.package_type && steps.package_type.outputs.name
-        run: gh pr edit "$PR_URL" --add-label "${{ steps.package_type.outputs.name }}"
-
   build:
     runs-on: ubuntu-latest
     strategy:

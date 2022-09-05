@@ -186,7 +186,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/eftec/bladeone" />
-      <path value="$PROJECT_DIR$/vendor/brick/event" />
       <path value="$PROJECT_DIR$/vendor/blast/facades" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/twig/cache-extension" />

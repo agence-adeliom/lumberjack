@@ -7,7 +7,6 @@
   <file>packages/lumberjack-admin</file>
   <file>packages/lumberjack-blocks</file>
   <file>packages/lumberjack-cron</file>
-  <file>packages/lumberjack-events</file>
   <file>packages/lumberjack-hooks</file>
   <file>packages/lumberjack-images</file>
   <file>packages/lumberjack-pagination</file>

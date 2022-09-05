@@ -181,7 +181,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/eftec/bladeone" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/brick/event" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/blast/facades" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/cache-extension" />
