@@ -1,7 +1,7 @@
 repository:
-  name: lumberjack-cron
-  description: [READ-ONLY] Register WordPress scheduled tasks into Lumberjack
-  topics: hooks wordpress timber lumberjack cron tasks
+  name: lumberjack-taxonomy
+  description: [READ-ONLY] Implementation of pagination into Lumberjack
+  topics: pagination wordpress timber lumberjack
   has_issues: true
   has_projects: false
   has_wiki: false
