@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/lumberjack-admin" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/lumberjack-cron" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/lumberjack-hooks" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/lumberjack-pagination" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nb/oxymel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-server-middleware" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />

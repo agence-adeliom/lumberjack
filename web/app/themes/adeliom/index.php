@@ -23,7 +23,7 @@ use Timber\Timber;
 
 class IndexController extends Controller
 {
-    public const RESULTS_PER_PAGE = 1;
+    public const RESULTS_PER_PAGE = 10;
 
     /**
      * @throws TwigTemplateNotFoundException
