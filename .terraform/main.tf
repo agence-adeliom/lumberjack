@@ -37,6 +37,7 @@ resource "github_repository" "create_repository" {
   has_issues = false
   has_projects = true
   has_wiki = true
+  auto_init = true
   lifecycle {
     prevent_destroy = true
   }
