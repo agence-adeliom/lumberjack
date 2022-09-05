@@ -23,6 +23,9 @@ jobs:
           php-version: ${{ env.PHP_VER }}
           coverage: none
 
+      - run: composer config http-basic.gf-composer-proxy.arnaud-ritti.workers.dev licensekey ${{secrets.ORG_GRAVITYFORMS_KEY}}
+      - run: composer config http-basic.auth-acf-composer-proxy.pivvenit.net licensekey ${{secrets.ORG_ACF_PRO_KEY}}
+
       - name: Get Composer Cache Directory
         id: composer-cache
         run: |
