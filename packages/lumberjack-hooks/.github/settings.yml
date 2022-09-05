@@ -1,4 +1,5 @@
 repository:
+  name: lumberjack-hooks
   description: [READ-ONLY] Register WordPress hooks, filters and shortcodes with PHP Attributes into Lumberjack
   topics: hooks wordpress timber lumberjack php-attributes
   has_issues: true
