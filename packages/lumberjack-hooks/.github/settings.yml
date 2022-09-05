@@ -1,6 +1,10 @@
 repository:
   description: [READ-ONLY] Register WordPress hooks, filters and shortcodes with PHP Attributes into Lumberjack
-  topics: lumberjack, wordpress, php-attribute, hooks, timber
+  topics: hooks wordpress timber lumberjack php-attributes
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  has_downloads: false
 
 # Labels: define labels for Issues and Pull Requests
 labels:
