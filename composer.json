@@ -180,8 +180,7 @@
         "agence-adeliom/lumberjack-events": "self.version",
         "agence-adeliom/lumberjack-hooks": "self.version",
         "agence-adeliom/lumberjack-pagination": "self.version",
-        "agence-adeliom/lumberjack-taxonomy": "self.version",
-        "agence-adeliom/lumberjack-webpack": "self.version"
+        "agence-adeliom/lumberjack-taxonomy": "self.version"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

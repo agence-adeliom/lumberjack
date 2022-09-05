@@ -28,11 +28,6 @@ class ParametersAdmin extends AbstractAdmin
         return 'Paramètres';
     }
 
-    public static function getSlug(): string
-    {
-        return 'parameters';
-    }
-
     /**
      * Register has option page
      */
@@ -73,7 +68,7 @@ class ParametersAdmin extends AbstractAdmin
     }
 
     /**
-     * @see https://github.com/wordplate/extended-acf#fields
+     * @see https://github.com/vinkla/extended-acf#fields
      * @return Traversable
      */
     public static function getFields(): Traversable
@@ -147,7 +142,7 @@ class ParametersAdmin extends AbstractAdmin
     }
 
     /**
-     * @see https://github.com/wordplate/extended-acf#location
+     * @see https://github.com/vinkla/extended-acf#location
      */
     public static function getLocation(): Traversable
     {

@@ -14,14 +14,20 @@ abstract class Cron
      *
      * @var int[]
      */
-    protected $every = array(
+    protected $every = [
         'seconds' => 0,
         'minutes' => 0,
         'hours' => 0,
         'days' => 0,
         'weeks' => 0,
         'months' => 0,
-    );
+    ];
+
+    /**
+     * Cron task handler
+     * @return void
+     */
+    abstract public static function handle(): void;
 
     /**
      * Register the cron task into Wordpress's scheduler
@@ -32,14 +38,14 @@ abstract class Cron
         $self = new $class();
         $slug = $self->slug();
 
-        add_filter('cron_schedules', fn($schedules) => $self->scheduleFilter($schedules));
+        add_filter('cron_schedules', fn ($schedules) => $self->scheduleFilter($schedules));
 
         if (!wp_next_scheduled($slug)) {
             wp_schedule_event(time(), $self->schedule(), $slug);
         }
 
         if (method_exists($self, 'handle')) {
-            add_action($slug, array($self, 'handle'));
+            add_action($slug, [$self, 'handle']);
         }
     }
 
@@ -55,10 +61,10 @@ abstract class Cron
         $interval = $this->calculateInterval();
 
         if (!array_key_exists($this->schedule(), $schedules)) {
-            $schedules[$this->schedule()] = array(
+            $schedules[$this->schedule()] = [
                 'interval' => $interval,
                 'display' => 'Every ' . floor($interval / 60) . ' minutes',
-            );
+            ];
         }
 
         return $schedules;
@@ -71,7 +77,6 @@ abstract class Cron
      */
     public function calculateInterval(): int
     {
-
         if (!is_array($this->every)) {
             throw new \RuntimeException("Interval must be an array");
         }
@@ -81,14 +86,14 @@ abstract class Cron
         }
 
         $interval = 0;
-        $multipliers = array(
+        $multipliers = [
             'seconds' => 1,
             'minutes' => 60,
             'hours' => 3600,
             'days' => 86400,
             'weeks' => 604800,
             'months' => 2628000,
-        );
+        ];
 
         foreach ($multipliers as $unit => $multiplier) {
             if (isset($this->every[$unit]) && is_int($this->every[$unit])) {
