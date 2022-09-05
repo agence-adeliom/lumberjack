@@ -6,7 +6,8 @@ declare(strict_types=1);
  * You can place your custom package configuration in here.
  */
 return [
-    "provider" => "vite",
+    # Choose your assets bundler tool (default: webpack, or use 'webpack' or 'vite')
+    // "provider" => "webpack",
     "build_directory" => "build",
     "script_attributes" => [
         "defer" => true,

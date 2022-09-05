@@ -12,22 +12,44 @@ declare(strict_types=1);
 
 namespace App;
 
+use Adeliom\Lumberjack\Pagination\PaginationViewModel;
 use App\Http\Controllers\Controller;
+use App\Http\Lumberjack;
+use App\PostTypes\Page;
 use Rareloop\Lumberjack\Exceptions\TwigTemplateNotFoundException;
 use Rareloop\Lumberjack\Http\Responses\TimberResponse;
-use Rareloop\Lumberjack\Post;
+use App\PostTypes\Post;
 use Timber\Timber;
 
 class IndexController extends Controller
 {
+    public const RESULTS_PER_PAGE = 1;
+
     /**
      * @throws TwigTemplateNotFoundException
      */
     public function handle(): TimberResponse
     {
-        $context = Timber::get_context();
-        $context['posts'] = Post::all();
+        global $paged;
+        if (!isset($paged) || !$paged) {
+            $paged = 1;
+        }
 
-        return new TimberResponse("templates/standard/standard.html.twig", $context);
+        $context = Timber::get_context();
+        $context['page'] = new Page();
+
+        $args = [];
+        $context['posts'] = Post::paginate(self::RESULTS_PER_PAGE, $args);
+        $context['pagination'] = PaginationViewModel::fromQueryBuilder(self::RESULTS_PER_PAGE, $paged, $args);
+
+        $templates = ['page/index.html.twig'];
+        if (is_home()) {
+            array_unshift($templates, 'page/front-page.html.twig', 'page/home.html.twig');
+        }
+
+        if ($context['page']->id) {
+            $templates = Lumberjack::passwordRender($templates, $context['page']->id);
+        }
+        return new TimberResponse($templates, $context);
     }
 }

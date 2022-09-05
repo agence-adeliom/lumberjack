@@ -11,9 +11,9 @@ class PaginationViewModel extends ViewModel
      */
     public $pagination;
 
-    public static function fromQueryBuilder(int $resultsPerPage = 10, int $forPage = 1): self
+    public static function fromQueryBuilder(int $resultsPerPage = 10, int $forPage = 1, array $prefs = []): self
     {
-        $pagination = PaginatedQueryBuilder::getPagination();
+        $pagination = PaginatedQueryBuilder::getPagination($prefs);
 
         return new self(
             $resultsPerPage,

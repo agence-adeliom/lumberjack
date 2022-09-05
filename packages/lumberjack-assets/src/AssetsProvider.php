@@ -52,7 +52,10 @@ class AssetsProvider extends ServiceProvider
             add_action( 'send_headers', function() {
                 $preloader = Helpers::app()->get("assets.preloader");
                 $preloader->generateWebLink();
-                header('Link: '.(new HttpHeaderSerializer())->serialize($preloader->getLinks()));
+                $links = $preloader->getLinks();
+                if(!empty($links)){
+                    header('Link: '.(new HttpHeaderSerializer())->serialize());
+                }
             }, 99 );
         }
     }

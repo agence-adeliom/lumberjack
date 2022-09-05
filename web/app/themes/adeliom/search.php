@@ -9,9 +9,9 @@ declare(strict_types=1);
 namespace App;
 
 use App\Http\Controllers\Controller;
+use App\PostTypes\Post;
 use Rareloop\Lumberjack\Exceptions\TwigTemplateNotFoundException;
 use Rareloop\Lumberjack\Http\Responses\TimberResponse;
-use Rareloop\Lumberjack\Post;
 use Timber\Timber;
 
 class SearchController extends Controller
@@ -29,6 +29,10 @@ class SearchController extends Controller
             's' => $searchQuery,
         ]);
 
-        return new TimberResponse('templates/search.html.twig', $context);
+        return new TimberResponse([
+            'page/search.html.twig',
+            'post/archive.html.twig',
+            'page/index.html.twig'
+        ], $context);
     }
 }

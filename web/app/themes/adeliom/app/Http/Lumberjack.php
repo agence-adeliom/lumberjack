@@ -26,13 +26,13 @@ class Lumberjack extends LumberjackCore
     ];
 
     /**
-     * @param string $twigPath
+     * @param string|array $twigPath
      * @param int $id
-     * @return string
+     * @return string|array
      */
-    public static function passwordRender(string $twigPath, int $id): string
+    public static function passwordRender(string|array $twigPath, int $id): string|array
     {
-        return post_password_required($id) ? 'templates/errors/password.html.twig' : $twigPath;
+        return post_password_required($id) ? 'errors/password.html.twig' : $twigPath;
     }
 
     /**

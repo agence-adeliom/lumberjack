@@ -6,8 +6,8 @@ declare(strict_types=1);
  * You can place your custom package configuration in here.
  */
 return [
-    "provider" => "vite",
-    //"provider" => "webpack",
+    # Choose your assets bundler tool (default: webpack, or use 'webpack' or 'vite')
+    // "provider" => "webpack",
     "build_directory" => "build",
     "script_attributes" => [
         "defer" => true,
@@ -20,7 +20,7 @@ return [
     // "crossorigin" => 'anonymous',
 
     # preload all rendered script and link tags automatically via the http2 Link header
-    "preload" => true,
+    // "preload" => true,
 
     # Throw an exception if the entrypoints.json file is missing or an entry is missing from the data
     // "strict_mode" => false,

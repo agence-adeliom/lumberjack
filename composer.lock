@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "636afb119f05e8403a3d48e5c897fe3a",
+    "content-hash": "b99371db727a900c115fa889415f99d6",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -71,6 +71,71 @@
                 "source": "https://github.com/agence-adeliom/acf-icon-picker/tree/1.0.0"
             },
             "time": "2022-07-29T12:35:44+00:00"
+        },
+        {
+            "name": "ajgl/breakpoint-twig-extension",
+            "version": "0.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ajgarlag/AjglBreakpointTwigExtension.git",
+                "reference": "9875feea0ac4bc3c9f308c62bae4727669d6052a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajgarlag/AjglBreakpointTwigExtension/zipball/9875feea0ac4bc3c9f308c62bae4727669d6052a",
+                "reference": "9875feea0ac4bc3c9f308c62bae4727669d6052a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "twig/twig": "^1.34|^2.0|^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "symfony/framework-bundle": "^2.7|^3.4|^4.4|^5.2",
+                "symfony/phpunit-bridge": "^4.4|^5.2",
+                "symfony/twig-bundle": "^2.7|^3.4|^4.4|^5.2"
+            },
+            "suggest": {
+                "ext-xdebug": "The Xdebug extension is required for the breakpoint to work",
+                "symfony/framework-bundle": "The framework bundle to integrate the extension into Symfony",
+                "symfony/twig-bundle": "The twig bundle to integrate the extension into Symfony"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ajgl\\Twig\\Extension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio J. García Lagar",
+                    "email": "aj@garcialagar.es",
+                    "homepage": "http://aj.garcialagar.es",
+                    "role": "developer"
+                }
+            ],
+            "description": "Twig extension to set breakpoints",
+            "homepage": "https://github.com/ajgarlag/AjglBreakpointTwigExtension",
+            "keywords": [
+                "Xdebug",
+                "breakpoint",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/ajgarlag/AjglBreakpointTwigExtension/issues",
+                "source": "https://github.com/ajgarlag/AjglBreakpointTwigExtension/tree/0.3.5"
+            },
+            "time": "2021-02-08T10:48:05+00:00"
         },
         {
             "name": "altorouter/altorouter",
@@ -1190,6 +1255,116 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "djboris88/timber-debugger",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djboris88/timber-debugger.git",
+                "reference": "39698bcedb40f5953e94ec4284e6fe42206e499e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djboris88/timber-debugger/zipball/39698bcedb40f5953e94ec4284e6fe42206e499e",
+                "reference": "39698bcedb40f5953e94ec4284e6fe42206e499e",
+                "shasum": ""
+            },
+            "require": {
+                "ajgl/breakpoint-twig-extension": "^0.3.4",
+                "djboris88/twig-commented-include": "^1.2",
+                "hellonico/twig-dump-extension": "^1.0",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "functions.php"
+                ],
+                "psr-4": {
+                    "Djboris88\\Timber\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Đemrovski",
+                    "email": "djboris88@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Composer package which provides some extra debugging options for Timber",
+            "homepage": "https://github.com/djboris88/timber-include-comments",
+            "keywords": [
+                "debug",
+                "timber",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/djboris88/timber-debugger/issues",
+                "source": "https://github.com/djboris88/timber-debugger/tree/master"
+            },
+            "time": "2019-12-11T09:07:04+00:00"
+        },
+        {
+            "name": "djboris88/twig-commented-include",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djboris88/twig-commented-include.git",
+                "reference": "a78dcf60100165f0a07c76e97739d744aca9d9db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djboris88/twig-commented-include/zipball/a78dcf60100165f0a07c76e97739d744aca9d9db",
+                "reference": "a78dcf60100165f0a07c76e97739d744aca9d9db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "twig/twig": "^1.14|^2.0|^3.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^2.7|^3.2",
+                "symfony/twig-bundle": "^2.7|^3.2"
+            },
+            "suggest": {
+                "symfony/framework-bundle": "The framework bundle to integrate the extension into Symfony",
+                "symfony/twig-bundle": "The twig bundle to integrate the extension into Symfony"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Djboris88\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Đemrovski",
+                    "email": "djboris88@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Twig extension which outputs HTML comments before and after the `include` tag",
+            "homepage": "https://github.com/djboris88/twig-include-comments",
+            "keywords": [
+                "comments",
+                "debug",
+                "html",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/djboris88/twig-commented-include/issues",
+                "source": "https://github.com/djboris88/twig-commented-include/tree/1.2.0"
+            },
+            "time": "2019-12-11T09:04:24+00:00"
+        },
+        {
             "name": "doctrine/annotations",
             "version": "1.13.3",
             "source": {
@@ -1815,6 +1990,49 @@
                 }
             ],
             "time": "2022-08-28T14:45:39+00:00"
+        },
+        {
+            "name": "hellonico/twig-dump-extension",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nlemoine/twig-dump-extension.git",
+                "reference": "fb5fbea20032254d32aaaba5fc1113a4a4877aaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nlemoine/twig-dump-extension/zipball/fb5fbea20032254d32aaaba5fc1113a4a4877aaf",
+                "reference": "fb5fbea20032254d32aaaba5fc1113a4a4877aaf",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/var-dumper": "^4.2 || ^5.0 || ^6.0",
+                "twig/twig": "^2.4 || ^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "HelloNico\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Lemoine",
+                    "email": "nico@niconico.fr",
+                    "homepage": "https://github.com/nlemoine"
+                }
+            ],
+            "description": "VarDumper Twig extension",
+            "homepage": "https://github.com/nlemoine/twig-dump-extension",
+            "support": {
+                "issues": "https://github.com/nlemoine/twig-dump-extension/issues",
+                "source": "https://github.com/nlemoine/twig-dump-extension/tree/1.2.0"
+            },
+            "time": "2022-07-12T15:30:32+00:00"
         },
         {
             "name": "http-interop/http-factory-guzzle",

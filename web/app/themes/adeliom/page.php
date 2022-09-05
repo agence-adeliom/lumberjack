@@ -15,9 +15,9 @@ namespace App;
 
 use App\Http\Controllers\Controller;
 use App\Http\Lumberjack;
+use App\PostTypes\Page;
 use Rareloop\Lumberjack\Exceptions\TwigTemplateNotFoundException;
 use Rareloop\Lumberjack\Http\Responses\TimberResponse;
-use Rareloop\Lumberjack\Page;
 use Timber\Timber;
 
 class PageController extends Controller
@@ -31,10 +31,14 @@ class PageController extends Controller
         $page = new Page();
 
         $context['post'] = $page;
-        $context['title'] = $page->title;
-        $context['content'] = $page->content;
+        $context['title'] = $page->title();
+        $context['content'] = $page->content();
 
-        $template = Lumberjack::passwordRender('templates/standard/standard.html.twig', (int)$page->ID);
+        $template = Lumberjack::passwordRender([
+            sprintf('page/page-%s.html.twig', $page->id),
+            sprintf('page/page-%s.html.twig', $page->slug),
+            'page/page.html.twig'
+        ], $page->id);
         return new TimberResponse($template, $context);
     }
 }

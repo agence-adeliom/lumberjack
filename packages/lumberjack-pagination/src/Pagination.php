@@ -9,7 +9,6 @@ trait Pagination
     public static function paginate($perPage = 10, $args = [])
     {
         global $paged;
-
         if (!isset($paged) || !$paged) {
             $paged = 1;
         }

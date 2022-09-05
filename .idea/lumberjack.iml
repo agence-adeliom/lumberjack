@@ -201,6 +201,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jean85/pretty-package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/web-link" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/djboris88/timber-debugger" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/djboris88/twig-commented-include" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ajgl/breakpoint-twig-extension" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hellonico/twig-dump-extension" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
