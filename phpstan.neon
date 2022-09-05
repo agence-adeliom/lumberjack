@@ -11,7 +11,7 @@ parameters:
         - packages/lumberjack-images
         - packages/lumberjack-pagination
         - packages/lumberjack-taxonomy
-        - packages/lumberjack-webpack
+        - packages/lumberjack-assets
     excludePaths:
         - node_modules
         - vendor

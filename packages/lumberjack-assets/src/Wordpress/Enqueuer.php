@@ -9,8 +9,8 @@ use Rareloop\Lumberjack\Helpers;
 
 class Enqueuer
 {
-    const ATTRIB_PREFIX = 'att_&#';
-    const ATTRIB_PATTERN = '/' . self::ATTRIB_PREFIX . '(.+)/';
+    public const ATTRIB_PREFIX = 'att_&#';
+    public const ATTRIB_PATTERN = '/' . self::ATTRIB_PREFIX . '(.+)/';
 
     public static function enqueue(string $name, string $entryName, array $config = []): array
     {
@@ -105,8 +105,8 @@ class Enqueuer
                 $config['in_footer']
             );
             $deps[] = $js['handle'];
-            foreach ($js['attributes'] ?? [] as $attr => $value){
-                \wp_script_add_data( $js['handle'], self::ATTRIB_PREFIX.$attr , $value );
+            foreach ($js['attributes'] ?? [] as $attr => $value) {
+                \wp_script_add_data($js['handle'], self::ATTRIB_PREFIX . $attr, $value);
             }
         }
 
@@ -119,8 +119,8 @@ class Enqueuer
                 $config['media']
             );
             $deps[] = $css['handle'];
-            foreach ($css['attributes'] ?? [] as $attr => $value){
-                \wp_style_add_data( $css['handle'], self::ATTRIB_PREFIX.$attr , $value );
+            foreach ($css['attributes'] ?? [] as $attr => $value) {
+                \wp_style_add_data($css['handle'], self::ATTRIB_PREFIX . $attr, $value);
             }
         }
 
@@ -164,13 +164,14 @@ class Enqueuer
 
     /**
      * Callback for WP to hit before echoing out an enqueued resource. This callback specifically checks for any key-value pairs that have been added through `add_data()` and are prefixed with a special value to indicate they should be injected into the final HTML
-     * @param {string} $tag - Will be the full string of the tag (`<link>` or `<script>`)
-     * @param {string} $handle - The handle that was specified for the resource when enqueuing it
-     * @param {string} $src - the URI of the resource
-     * @param {string|null} $media - if resources is style, should be the target media, else null
-     * @param {boolean} $isStyle - If the resource is a stylesheet
+     * @param string $tag - Will be the full string of the tag (`<link>` or `<script>`)
+     * @param string $handle - The handle that was specified for the resource when enqueuing it
+     * @param string $src - the URI of the resource
+     * @param string|null $media - if resources is style, should be the target media, else null
+     * @param bool $isStyle - If the resource is a stylesheet
      */
-    public static function scriptAndStyleTagAttributeAdder($tag, $handle, $src, $media, $isStyle){
+    public static function scriptAndStyleTagAttributeAdder($tag, $handle, $src, $media, $isStyle)
+    {
         $extraAttrs = array();
         $nodeName = '';
 
@@ -178,7 +179,6 @@ class Enqueuer
         if ($isStyle) {
             $nodeName = 'link';
             $extraAttrs = wp_styles()->registered[$handle]->extra;
-
         } else {
             $nodeName = 'script';
             $extraAttrs = wp_scripts()->registered[$handle]->extra;
@@ -199,7 +199,7 @@ class Enqueuer
         if (count($attribsToAdd)) {
             $dom = new \DOMDocument();
             @$dom->loadHTML($tag);
-            /** @var {DOMElement[]} */
+            /** @var \DOMElement[] */
             $resourceTags = $dom->getElementsByTagName($nodeName);
             foreach ($resourceTags as $resourceTagNode) {
                 foreach ($attribsToAdd as $attrKey => $attrVal) {

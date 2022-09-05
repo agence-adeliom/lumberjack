@@ -20,4 +20,6 @@ interface EntrypointLookupInterface
      * Check if the entry name passed exist in entrypoints file
      */
     public function entryExists(string $entryName): bool;
+
+    public function getAsset(string $ressource): ?string;
 }

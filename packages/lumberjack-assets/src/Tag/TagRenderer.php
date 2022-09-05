@@ -1,4 +1,5 @@
 <?php
+
 namespace Adeliom\Lumberjack\Assets\Tag;
 
 use Adeliom\Lumberjack\Assets\Entrypoint\EntrypointLookupInterface;
@@ -120,7 +121,7 @@ class TagRenderer
     private function convertArrayToAttributes(array $attributesMap): string
     {
         // remove attributes set specifically to false
-        $attributesMap = array_filter($attributesMap, function($value) {
+        $attributesMap = array_filter($attributesMap, function ($value) {
             return $value !== false;
         });
 
@@ -136,10 +137,5 @@ class TagRenderer
             array_keys($attributesMap),
             $attributesMap
         ));
-    }
-
-    private function createLink(string $rel, string $href): Link
-    {
-        return new Link($rel, $href);
     }
 }

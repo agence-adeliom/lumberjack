@@ -26,7 +26,7 @@ class AuthorController extends Controller
 
         $context = Timber::get_context();
 
-        if ( isset( $wp_query->query_vars['author'] ) ) {
+        if (isset($wp_query->query_vars['author'])) {
             $author = new TimberUser($wp_query->query_vars['author']);
             $context['author'] = $author;
             $context['title']  = 'Author Archives: ' . $author->name();

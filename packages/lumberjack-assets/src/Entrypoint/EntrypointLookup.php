@@ -30,8 +30,8 @@ abstract class EntrypointLookup implements EntrypointLookupInterface, IntegrityD
         $this->entrypointsFileName = ConfigFacade::get("assets.entrypoints_file_name", self::ENTRYPOINTS_FILE_NAME);
         $this->manifestFileName = ConfigFacade::get("assets.manifest_file_name", self::MANIFEST_FILE_NAME);
 
-        $this->entrypointsFile = preg_replace('#/+#','/', sprintf('%s/%s/%s', get_template_directory(), $buildPath, $this->entrypointsFileName));
-        $this->manifestFile = preg_replace('#/+#','/', sprintf('%s/%s/%s', get_template_directory(), $buildPath, $this->manifestFileName));
+        $this->entrypointsFile = preg_replace('#/+#', '/', sprintf('%s/%s/%s', get_template_directory(), $buildPath, $this->entrypointsFileName));
+        $this->manifestFile = preg_replace('#/+#', '/', sprintf('%s/%s/%s', get_template_directory(), $buildPath, $this->manifestFileName));
 
         $this->buildPath = $buildPath;
         $this->strictMode = $strictMode;
@@ -112,6 +112,4 @@ abstract class EntrypointLookup implements EntrypointLookupInterface, IntegrityD
         $asset = str_replace(parse_url(get_theme_file_uri(), PHP_URL_PATH), "", $assetPath);
         return get_theme_file_uri($asset);
     }
-
-
 }

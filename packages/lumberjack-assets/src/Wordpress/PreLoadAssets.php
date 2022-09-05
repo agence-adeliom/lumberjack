@@ -18,7 +18,8 @@ class PreLoadAssets
         $this->tagRenderer = Helpers::app()->get("assets.tag_renderer");
     }
 
-    public function generateWebLink(){
+    public function generateWebLink()
+    {
         $defaultAttributes = $this->tagRenderer->getDefaultAttributes();
         $crossOrigin = $defaultAttributes['crossorigin'] ?? false;
 

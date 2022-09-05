@@ -41,22 +41,22 @@ class AssetsProvider extends ServiceProvider
             return $twig;
         });
 
-        add_filter('script_loader_tag',function($tag, $handle, $src){
+        add_filter('script_loader_tag', function ($tag, $handle, $src) {
             return Enqueuer::scriptAndStyleTagAttributeAdder($tag, $handle, $src, null, false);
-        },10,4);
-        add_filter('style_loader_tag',function($tag, $handle, $src, $media){
+        }, 10, 4);
+        add_filter('style_loader_tag', function ($tag, $handle, $src, $media) {
             return Enqueuer::scriptAndStyleTagAttributeAdder($tag, $handle, $src, $media, true);
-        },10,4);
+        }, 10, 4);
 
-        if(ConfigFacade::get("assets.preload", false)){
-            add_action( 'send_headers', function() {
+        if (ConfigFacade::get("assets.preload", false)) {
+            add_action('send_headers', function () {
                 $preloader = Helpers::app()->get("assets.preloader");
                 $preloader->generateWebLink();
                 $links = $preloader->getLinks();
-                if(!empty($links)){
-                    header('Link: '.(new HttpHeaderSerializer())->serialize());
+                if (!empty($links)) {
+                    header('Link: ' . (new HttpHeaderSerializer())->serialize($links));
                 }
-            }, 99 );
+            }, 99);
         }
     }
 }

@@ -28,8 +28,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         if (defined('WP_DEBUG') && WP_DEBUG && function_exists('add_filter')) {
-            add_filter('timber/loader/twig', function ($twig)
-            {
+            add_filter('timber/loader/twig', function ($twig) {
                 $twig->addExtension(new CommentedIncludeExtension());
                 $twig->addExtension(new DumpExtension());
                 $twig->addExtension(new BreakpointExtension());
@@ -37,9 +36,9 @@ class AppServiceProvider extends ServiceProvider
                 return $twig;
             });
 
-            add_filter( 'timber/output', function( $output, $data, $file ) {
+            add_filter('timber/output', function ($output, $data, $file) {
                 return "\n<!-- Begin output of '" . $file . "' -->\n" . $output . "\n<!-- / End output of '" . $file . "' -->\n";
-            }, 10, 3 );
+            }, 10, 3);
         }
     }
 }

@@ -30,7 +30,7 @@ class ArchiveController extends Controller
     public function handle(): TimberResponse
     {
         global $paged;
-        if (!isset($paged) || !$paged){
+        if (!isset($paged) || !$paged) {
             $paged = 1;
         }
 

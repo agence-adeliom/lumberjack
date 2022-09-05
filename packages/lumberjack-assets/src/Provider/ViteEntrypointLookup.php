@@ -1,4 +1,5 @@
 <?php
+
 namespace Adeliom\Lumberjack\Assets\Provider;
 
 use Adeliom\Lumberjack\Assets\Entrypoint\EntrypointLookup;

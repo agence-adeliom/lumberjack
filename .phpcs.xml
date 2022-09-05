@@ -12,7 +12,7 @@
   <file>packages/lumberjack-images</file>
   <file>packages/lumberjack-pagination</file>
   <file>packages/lumberjack-taxonomy</file>
-  <file>packages/lumberjack-webpack</file>
+  <file>packages/lumberjack-assets</file>
 
   <exclude-pattern>web/app/themes/adeliom/**/*\.(inc|css|pcss|js)$</exclude-pattern>
   <exclude-pattern>web/app/themes/adeliom/*\.(inc|css|pcss|js)$</exclude-pattern>

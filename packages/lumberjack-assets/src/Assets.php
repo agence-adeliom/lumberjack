@@ -4,7 +4,6 @@ namespace Adeliom\Lumberjack\Assets;
 
 use Blast\Facades\AbstractFacade;
 
-
 /**
  * @method static array getJsFiles(string $entryName)
  * @method static array getCssFiles(string $entryName)
