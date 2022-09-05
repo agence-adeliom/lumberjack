@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1b0c34fe4a9983038cd404e48e4cc35",
+    "content-hash": "8f5b97688068f9b82df712da9b63447e",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -256,49 +256,6 @@
                 "source": "https://github.com/phpthinktank/blast-facades/tree/1.0"
             },
             "time": "2015-10-22T17:05:25+00:00"
-        },
-        {
-            "name": "brick/event",
-            "version": "0.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/brick/event.git",
-                "reference": "ac1154e7d6b4b75fd73edea292aab1faa6f60fd1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/brick/event/zipball/ac1154e7d6b4b75fd73edea292aab1faa6f60fd1",
-                "reference": "ac1154e7d6b4b75fd73edea292aab1faa6f60fd1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "php-coveralls/php-coveralls": "2.*",
-                "phpunit/phpunit": "7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Brick\\Event\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Event dispatching library",
-            "keywords": [
-                "brick",
-                "event",
-                "eventdispatcher"
-            ],
-            "support": {
-                "issues": "https://github.com/brick/event/issues",
-                "source": "https://github.com/brick/event/tree/0.1.1"
-            },
-            "time": "2019-12-03T11:40:03+00:00"
         },
         {
             "name": "clue/stream-filter",

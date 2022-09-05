@@ -65,7 +65,7 @@
             "Adeliom\\Lumberjack\\Cron\\": "packages/lumberjack-cron/src",
             "Adeliom\\Lumberjack\\Hooks\\": "packages/lumberjack-hooks/src",
             "Adeliom\\Lumberjack\\Pagination\\": "packages/lumberjack-pagination/src",
-            "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src",
+            "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src"
         }
     },
     "repositories": [
