@@ -205,6 +205,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/djboris88/twig-commented-include" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hellonico/twig-dump-extension" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/php-cs-fixer/diff" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

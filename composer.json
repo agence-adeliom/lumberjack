@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",
+        "ext-dom": "*",
         "ext-json": "*",
         "advanced-custom-fields/advanced-custom-fields-pro": "^5.9",
         "agence-adeliom/acf-icon-picker": "^1.0",

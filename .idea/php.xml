@@ -215,6 +215,7 @@
       <path value="$PROJECT_DIR$/vendor/djboris88/twig-commented-include" />
       <path value="$PROJECT_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <path value="$PROJECT_DIR$/vendor/hellonico/twig-dump-extension" />
+      <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
