@@ -6,21 +6,10 @@
         "rareloop/lumberjack-core": "^5.0",
         "symfony/web-link": "^5.4"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
     "autoload": {
         "psr-4": {
             "Adeliom\\Lumberjack\\Assets\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Adeliom\\Lumberjack\\Assets\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "phpunit"
     },
     "config": {
         "allow-plugins": {

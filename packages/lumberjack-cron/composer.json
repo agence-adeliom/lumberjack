@@ -4,21 +4,10 @@
         "php": ">=8.0.2",
         "rareloop/lumberjack-core": "^5.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
     "autoload": {
         "psr-4": {
             "Adeliom\\Lumberjack\\Cron\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Adeliom\\Lumberjack\\Cron\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "test": "phpunit"
     },
     "config": {
         "allow-plugins": {
