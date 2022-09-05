@@ -11,10 +11,10 @@ Register WordPress hooks, filters and shortcodes with PHP Attributes
 ## Installation
 
 ```bash
-composer require agence-adeliom/lumberjack-admin
+composer require agence-adeliom/lumberjack-hooks
 
 # Copy the configuration file
-cp vendor/agence-adeliom/lumberjack-admin/config/hooks.php web/app/themes/YOUR_THEME/config/hooks.php
+cp vendor/agence-adeliom/lumberjack-hooks/config/hooks.php web/app/themes/YOUR_THEME/config/hooks.php
 ```
 
 #### Register the service provider into web/app/themes/YOUR_THEME/config/app.php

@@ -9,7 +9,6 @@
         "ext-json": "*",
         "advanced-custom-fields/advanced-custom-fields-pro": "^5.9",
         "agence-adeliom/acf-icon-picker": "^1.0",
-        "brick/event": "^0.1.1",
         "composer/installers": "^1.0 | ^2.0",
         "djboris88/timber-debugger": "^1.1",
         "doctrine/annotations": "^1.6",
@@ -64,20 +63,9 @@
             "Adeliom\\Lumberjack\\Assets\\": "packages/lumberjack-assets/src",
             "Adeliom\\Lumberjack\\Blocks\\": "packages/lumberjack-blocks/src",
             "Adeliom\\Lumberjack\\Cron\\": "packages/lumberjack-cron/src",
-            "Adeliom\\Lumberjack\\Event\\": "packages/lumberjack-events/src",
             "Adeliom\\Lumberjack\\Hooks\\": "packages/lumberjack-hooks/src",
             "Adeliom\\Lumberjack\\Pagination\\": "packages/lumberjack-pagination/src",
             "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src",
-            "Adeliom\\Lumberjack\\Webpack\\": "packages/lumberjack-webpack/src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Adeliom\\Lumberjack\\Assets\\Tests\\": "packages/lumberjack-assets/tests/",
-            "Adeliom\\Lumberjack\\Cron\\Tests\\": "packages/lumberjack-cron/tests/",
-            "Adeliom\\Lumberjack\\Event\\Tests\\": "packages/lumberjack-events/tests/",
-            "Adeliom\\Lumberjack\\Hooks\\Tests\\": "packages/lumberjack-hooks/tests/",
-            "Adeliom\\Lumberjack\\Webpack\\Tests\\": "packages/lumberjack-webpack/tests/"
         }
     },
     "repositories": [
@@ -177,7 +165,6 @@
         "agence-adeliom/lumberjack-assets": "self.version",
         "agence-adeliom/lumberjack-blocks": "self.version",
         "agence-adeliom/lumberjack-cron": "self.version",
-        "agence-adeliom/lumberjack-events": "self.version",
         "agence-adeliom/lumberjack-hooks": "self.version",
         "agence-adeliom/lumberjack-pagination": "self.version",
         "agence-adeliom/lumberjack-taxonomy": "self.version"

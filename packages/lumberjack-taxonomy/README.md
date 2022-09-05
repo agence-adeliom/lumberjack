@@ -14,7 +14,7 @@ Implementation of taxonomies into Lumberjack
 composer require agence-adeliom/lumberjack-taxonomy
 
 # Copy the configuration file
-cp vendor/agence-adeliom/lumberjack-admin/config/taxonomies.php web/app/themes/YOUR_THEME/config/taxonomies.php
+cp vendor/agence-adeliom/lumberjack-taxonomy/config/taxonomies.php web/app/themes/YOUR_THEME/config/taxonomies.php
 ```
 
 #### Register the service provider into web/app/themes/YOUR_THEME/config/app.php
