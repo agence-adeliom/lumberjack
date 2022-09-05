@@ -10,9 +10,4 @@ use Rareloop\Lumberjack\Post as BasePost;
 class Post extends BasePost
 {
     use Pagination;
-
-    public static function register(): void
-    {
-        return;
-    }
 }

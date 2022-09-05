@@ -9,9 +9,4 @@ use Rareloop\Lumberjack\Page as BasePage;
 class Page extends BasePage
 {
     use Pagination;
-
-    public static function register(): void
-    {
-        return;
-    }
 }

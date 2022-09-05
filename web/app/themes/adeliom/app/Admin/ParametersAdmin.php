@@ -38,7 +38,7 @@ class ParametersAdmin extends AbstractAdmin
      */
     public static function hasOptionPage(): bool
     {
-        return true; // false by default
+        return true;
     }
 
     public static function getStyle(): string

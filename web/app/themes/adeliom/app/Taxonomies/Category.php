@@ -11,9 +11,4 @@ class Category extends Term
     {
         return "category";
     }
-
-    public static function register(): void
-    {
-        return;
-    }
 }

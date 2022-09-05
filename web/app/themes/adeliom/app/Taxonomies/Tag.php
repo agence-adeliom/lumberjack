@@ -11,9 +11,4 @@ class Tag extends Term
     {
         return "post_tag";
     }
-
-    public static function register(): void
-    {
-        return;
-    }
 }

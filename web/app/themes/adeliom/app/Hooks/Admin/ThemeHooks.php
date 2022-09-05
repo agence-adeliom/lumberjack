@@ -57,18 +57,6 @@ class ThemeHooks
     }
 
     /**
-     * Remove metaboxes (ex: taxonomy choices on right side)
-     *
-     * @Action("admin_menu")
-     */
-    #[Action("admin_menu")]
-    public static function removeMetaboxes(): void
-    {
-        // You can get the key by inspecting ID in the source code (F12)
-        //remove_meta_box( 'tagsdiv-type', "my_post_type_name",'normal' );
-    }
-
-    /**
      * Remove all notices
      *
      * @Action("init", 100)
@@ -82,33 +70,12 @@ class ThemeHooks
     }
 
     /**
-     * @Action("wp_enqueue_scripts")
-     */
-    #[Action("wp_enqueue_scripts")]
-    public static function enqueue(): void
-    {
-        //Assets::enqueue("tailwind", "tailwind");
-    }
-
-    /**
      * @Action("admin_enqueue_scripts")
-     */
-    #[Action("admin_enqueue_scripts")]
-    public static function adminEnqueueScripts(): void
-    {
-        self::themeStyle();
-    }
-
-    /**
      * @Action("login_enqueue_scripts")
      */
     #[Action("login_enqueue_scripts")]
-    public static function loginEnqueueScripts(): void
-    {
-        self::themeStyle();
-    }
-
-    private static function themeStyle(): void
+    #[Action("admin_enqueue_scripts")]
+    public static function themeStyle(): void
     {
         if (!current_user_can('manage_options')) {
             // Remove metaboxes
