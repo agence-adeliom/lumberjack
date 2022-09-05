@@ -1,81 +1,79 @@
-# WP Hook
+# [READ-ONLY] Lumberjack Hooks
 
-[![PHPUnit](https://github.com/agence-adeliom/lumberjack-hooks/actions/workflows/php.yml/badge.svg)](https://github.com/agence-adeliom/lumberjack-hooks/actions/workflows/php.yml)
-[![Latest Unstable Version](https://poser.pugx.org/dugajean/wp-hook-annotations/v/unstable)](https://packagist.org/packages/agence-adeliom/lumberjack-hooks)
-[![Total Downloads](https://poser.pugx.org/agence-adeliom/lumberjack-hooks/downloads)](https://packagist.org/packages/agence-adeliom/lumberjack-hooks) 
-[![License](https://poser.pugx.org/agence-adeliom/lumberjack-hooks/license)](https://packagist.org/packages/agence-adeliom/lumberjack-hooks) 
-
-Register WordPress hooks, filters and shortcodes.
-
-*   With PHP Docblock (annotations)
-*   Or with PHP 8.0 Attributes
+Register WordPress hooks, filters and shortcodes with PHP Attributes
 
 ## Requirements
 
-*   PHP 7.1 or greater (tested on PHP 7.4, 8.0 and 8.1)
+* PHP 8.0 or greater
+* Composer
+* Lumberjack
 
-## Install
-
-Via Composer
+## Installation
 
 ```bash
-composer require agence-adeliom/lumberjack-hooks
+composer require agence-adeliom/lumberjack-admin
+
+# Copy the configuration file
+cp vendor/agence-adeliom/lumberjack-admin/config/hooks.php web/app/themes/YOUR_THEME/config/hooks.php
+```
+
+#### Register the service provider into web/app/themes/YOUR_THEME/config/app.php
+
+```php
+'providers' => [
+    ...
+    \Adeliom\Lumberjack\Hooks\HookProvider::class
+]
 ```
 
 ## Usage
 
-To automatically wire up your class, simply call the `HookRegistry::bootstrap` method, like so: 
+Create your hook class :
 
 ```php
 <?php
 
-namespace My\CoolNamespace;
+namespace App\Hooks;
 
-use Adeliom\Lumberjack\Hooks\HookRegistry;
 use Adeliom\Lumberjack\Hooks\Models\Action;
+use Adeliom\Lumberjack\Hooks\Models\Filter;
 
 class MyClass
 {
-    public function __construct(HookRegistry $hookRegistry) 
+
+    #[Action(tag: "init")]
+    public function doSomethingAtInit()
     {
-        $hookRegistry->bootstrap($this);
+        // do something
     }
     
-    /**
-     * @Action(tag="init")    
-     */
-    #[Action(tag: "init")]
-    public function doSomething()
+    #[Filter(tag: "enter_title_here")]
+    public function alterEnterTitleHere()
     {
         // do something
     }
 }
 ```
 
-And you're done!
-
-The following annotations can be used in PHP 7:
+Register the class into your config file `web/app/themes/YOUR_THEME/config/hooks.php` :
 
 ```php
-/**
- * @Action(tag="the hook name", priority=1, accepted_args=1)
- * @Filter(tag="the filter name", priority=1, accepted_args=1)
- * @Shortcode(tag="the shortcode code")
- */
+return [
+    'register' => [
+        ...
+        App\Hooks\MyClass::class
+    ],
+];
 ```
 
-For PHP 8, please use attributes:
+And you're done!
+
+# API
 
 ```php
 #[Action(tag: "the hook name", priority: 1, accepted_args: 1)]
 #[Filter(tag: "the filter name", priority: 1, accepted_args: 1)]
 #[Shortcode(tag: "the shortcode code", priority: 1, accepted_args: 1)]
-```
-
-## Testing
-
-```bash
-composer test
 ```
 
 ## License

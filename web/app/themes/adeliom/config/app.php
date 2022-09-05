@@ -64,7 +64,9 @@ return [
         'level' => Monolog\Logger::ERROR,
     ],
 
-    'themeSupport' => [],
+    'themeSupport' => [
+        'post-thumbnails'
+    ],
 
     /**
      * The key used by the Encrypter. This should be a random 32 character string.
