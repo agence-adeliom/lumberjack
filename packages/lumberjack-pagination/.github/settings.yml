@@ -1,7 +1,7 @@
 repository:
   name: lumberjack-pagination
   description: [READ-ONLY] Implementation of pagination into Lumberjack
-  topics: pagination wordpress timber lumberjack
+  topics: pagination, wordpress, timber, lumberjack
   has_issues: true
   has_projects: false
   has_wiki: false
