@@ -59,6 +59,7 @@
         ],
         "psr-4": {
             "Adeliom\\Installer\\": ".installer",
+            "Mono\\": ".monorepo",
             "Adeliom\\Lumberjack\\Admin\\": "packages/lumberjack-admin/src",
             "Adeliom\\Lumberjack\\Assets\\": "packages/lumberjack-assets/src",
             "Adeliom\\Lumberjack\\Blocks\\": "packages/lumberjack-blocks/src",
