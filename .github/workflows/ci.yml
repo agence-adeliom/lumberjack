@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - '*.x'
-  pull_request_target:
-    branches:
-      - '*.x'
   push:
     branches:
       - '*.x'

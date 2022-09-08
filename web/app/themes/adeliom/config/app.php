@@ -34,7 +34,6 @@ return [
         // Adeliom Providers
         \Adeliom\Lumberjack\Admin\AdminProvider::class,
         \Adeliom\Lumberjack\Cron\CronProvider::class,
-        \Adeliom\Lumberjack\Event\EventProvider::class,
         \Adeliom\Lumberjack\Hooks\HookProvider::class,
         \Adeliom\Lumberjack\Taxonomy\CustomTaxonomyServiceProvider::class,
         \Adeliom\Lumberjack\Assets\AssetsProvider::class,

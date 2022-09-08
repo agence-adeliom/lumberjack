@@ -33,14 +33,14 @@ final class EntryFilesTwigExtension extends AbstractExtension
         return $this->getEntrypointLookup()->getCssFiles($entryName);
     }
 
-    public function renderScriptTags(string $entryName, string $packageName = null, array $attributes = []): string
+    public function renderScriptTags(string $entryName, array $attributes = []): string
     {
-        return $this->getTagRenderer()->renderScriptTags($entryName, $packageName, $attributes);
+        return $this->getTagRenderer()->renderScriptTags($entryName, $attributes);
     }
 
-    public function renderLinkTags(string $entryName, string $packageName = null, array $attributes = []): string
+    public function renderLinkTags(string $entryName, array $attributes = []): string
     {
-        return $this->getTagRenderer()->renderLinkTags($entryName, $packageName, $attributes);
+        return $this->getTagRenderer()->renderLinkTags($entryName, $attributes);
     }
 
     public function entryExists(string $entryName): bool

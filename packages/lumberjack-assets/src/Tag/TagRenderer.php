@@ -31,7 +31,7 @@ class TagRenderer
         $this->reset();
     }
 
-    public function renderScriptTags(string $entryName, string $packageName = null, array $extraAttributes = []): string
+    public function renderScriptTags(string $entryName, array $extraAttributes = []): string
     {
         $scriptTags = [];
         $entryPointLookup = $this->getEntrypointLookup();
@@ -39,7 +39,7 @@ class TagRenderer
 
         foreach ($entryPointLookup->getJavaScriptFiles($entryName) as $filename) {
             $attributes = [];
-            $attributes['src'] = $this->getAssetPath($filename, $packageName);
+            $attributes['src'] = $this->getAssetPath($filename);
             $attributes = array_merge($attributes, $this->defaultAttributes, $this->defaultScriptAttributes, $extraAttributes);
 
             if (isset($integrityHashes[$filename])) {
@@ -57,7 +57,7 @@ class TagRenderer
         return implode('', $scriptTags);
     }
 
-    public function renderLinkTags(string $entryName, string $packageName = null, array $extraAttributes = []): string
+    public function renderLinkTags(string $entryName, array $extraAttributes = []): string
     {
         $scriptTags = [];
         $entryPointLookup = $this->getEntrypointLookup();
@@ -66,7 +66,7 @@ class TagRenderer
         foreach ($entryPointLookup->getCssFiles($entryName) as $filename) {
             $attributes = [];
             $attributes['rel'] = 'stylesheet';
-            $attributes['href'] = $this->getAssetPath($filename, $packageName);
+            $attributes['href'] = $this->getAssetPath($filename);
             $attributes = array_merge($attributes, $this->defaultAttributes, $this->defaultLinkAttributes, $extraAttributes);
 
             if (isset($integrityHashes[$filename])) {
@@ -107,7 +107,7 @@ class TagRenderer
         ];
     }
 
-    private function getAssetPath(string $assetPath, string $packageName = null): string
+    private function getAssetPath(string $assetPath): string
     {
         $asset = str_replace(parse_url(get_theme_file_uri(), PHP_URL_PATH), "", $assetPath);
         return get_theme_file_uri($asset);
