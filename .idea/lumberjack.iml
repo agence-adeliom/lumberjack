@@ -139,7 +139,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wp-cli/server-command" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/wp-cli/i18n-command" />
@@ -210,7 +209,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/djboris88/twig-commented-include" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hellonico/twig-dump-extension" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-cs-fixer/diff" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -143,7 +143,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/wp-cli/server-command" />
       <path value="$PROJECT_DIR$/vendor/wp-cli/i18n-command" />
@@ -214,7 +213,6 @@
       <path value="$PROJECT_DIR$/vendor/djboris88/twig-commented-include" />
       <path value="$PROJECT_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <path value="$PROJECT_DIR$/vendor/hellonico/twig-dump-extension" />
-      <path value="$PROJECT_DIR$/vendor/php-cs-fixer/diff" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
