@@ -7,7 +7,6 @@ parameters:
         - packages/lumberjack-blocks
         - packages/lumberjack-cron
         - packages/lumberjack-hooks
-        - packages/lumberjack-images
         - packages/lumberjack-pagination
         - packages/lumberjack-taxonomy
         - packages/lumberjack-assets

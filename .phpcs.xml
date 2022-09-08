@@ -8,7 +8,6 @@
   <file>packages/lumberjack-blocks</file>
   <file>packages/lumberjack-cron</file>
   <file>packages/lumberjack-hooks</file>
-  <file>packages/lumberjack-images</file>
   <file>packages/lumberjack-pagination</file>
   <file>packages/lumberjack-taxonomy</file>
   <file>packages/lumberjack-assets</file>
