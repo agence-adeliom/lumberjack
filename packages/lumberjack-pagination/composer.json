@@ -1,6 +1,6 @@
 {
     "name": "agence-adeliom/lumberjack-pagination",
-    "keywords": [ "pagination", "wordpress", "timber", "lumberjack" ],
+    "keywords": ["pagination", "wordpress", "timber", "lumberjack"],
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",
@@ -17,11 +17,11 @@
         }
     },
     "conflict": {
-        "agence-adeliom/lumberjack-cron": "<1.0.0",
-        "agence-adeliom/lumberjack-blocks": "<1.0.0",
-        "agence-adeliom/lumberjack-hooks": "<1.0.0",
-        "agence-adeliom/lumberjack-taxonomy": "<1.0.0",
-        "agence-adeliom/lumberjack-admin": "<1.0.0",
-        "agence-adeliom/lumberjack-assets": "<1.0.0"
+        "agence-adeliom/lumberjack-cron": "<1.0.1",
+        "agence-adeliom/lumberjack-blocks": "<1.0.1",
+        "agence-adeliom/lumberjack-hooks": "<1.0.1",
+        "agence-adeliom/lumberjack-taxonomy": "<1.0.1",
+        "agence-adeliom/lumberjack-admin": "<1.0.1",
+        "agence-adeliom/lumberjack-assets": "<1.0.1"
     }
 }
