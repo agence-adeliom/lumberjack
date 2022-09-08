@@ -1,5 +1,6 @@
 {
     "name": "agence-adeliom/lumberjack-cron",
+    "keywords": [ "wordpress", "timber", "lumberjack", "cron", "tasks" ],
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",

@@ -1,5 +1,6 @@
 {
     "name": "agence-adeliom/lumberjack-hooks",
+    "keywords": [ "hooks", "wordpress", "timber", "lumberjack", "php-attributes" ],
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",

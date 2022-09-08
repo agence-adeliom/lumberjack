@@ -1,5 +1,6 @@
 {
     "name": "agence-adeliom/lumberjack-pagination",
+    "keywords": [ "pagination", "wordpress", "timber", "lumberjack" ],
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",

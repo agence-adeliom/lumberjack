@@ -1,5 +1,6 @@
 {
     "name": "agence-adeliom/lumberjack-assets",
+    "keywords": [ "assets", "wordpress", "timber", "lumberjack", "webpack", "webpack-encore" ],
     "license": "MIT",
     "require": {
         "php": ">=8.0.2",
