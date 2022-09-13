@@ -1,6 +1,6 @@
 # [READ-ONLY] Lumberjack Assets
 
-Implementation of taxonomies into Lumberjack
+Implementation of webpack into Lumberjack
 
 ## Requirements
 

@@ -14,6 +14,7 @@ use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateReplaceReleaseWorker;
 
 return static function (MBConfig $mbConfig): void {
     $mbConfig->packageDirectories([__DIR__ . '/packages']);
+    $mbConfig->packageDirectoriesExcludes([__DIR__ . '/packages/lumberjack-project']);
     $mbConfig->defaultBranch('1.x');
 
     $mbConfig->dataToRemove([
@@ -34,7 +35,7 @@ return static function (MBConfig $mbConfig): void {
     $mbConfig->workers([
         // release workers - in order to execute
         UpdateReplaceReleaseWorker::class,
-        SetCurrentMutualConflictsReleaseWorker::class,
+        //SetCurrentMutualConflictsReleaseWorker::class,
         SetCurrentMutualDependenciesReleaseWorker::class,
         TagVersionReleaseWorker::class,
         PushTagReleaseWorker::class,
