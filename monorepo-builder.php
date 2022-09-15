@@ -39,10 +39,10 @@ return static function (MBConfig $mbConfig): void {
         // release workers - in order to execute
         UpdateReplaceReleaseWorker::class,
         //SetCurrentMutualConflictsReleaseWorker::class,
-        SetCurrentMutualDependenciesReleaseWorker::class,
+        //SetCurrentMutualDependenciesReleaseWorker::class,
         TagVersionReleaseWorker::class,
         PushTagReleaseWorker::class,
-        SetNextMutualDependenciesReleaseWorker::class,
+        //SetNextMutualDependenciesReleaseWorker::class,
         UpdateBranchAliasReleaseWorker::class,
         Mono\PushNextDevReleaseWorker::class,
     ]);

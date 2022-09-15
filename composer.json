@@ -24,7 +24,7 @@
         "roots/wp-config": "^1.0",
         "roots/wp-password-bcrypt": "^1.0",
         "roots/wp-stage-switcher": "^2.2",
-        "stayallive/wp-sentry": "^5.2",
+        "stayallive/wp-sentry": "^6.0",
         "symfony/dotenv": "^5.4",
         "symfony/polyfill-php74": "^1.26",
         "symfony/polyfill-php80": "^1.26",
