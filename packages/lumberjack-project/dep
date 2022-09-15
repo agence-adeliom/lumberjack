@@ -1,9 +1,0 @@
-#!/bin/bash
-eval $(ssh-agent -s)
-if [ -f "/user/.ssh/id_ed25519" ]; then
-  ssh-add /user/.ssh/id_ed25519
-fi
-if [ -f "/user/.ssh/id_rsa" ]; then
-  ssh-add /user/.ssh/id_rsa
-fi
-php vendor/bin/deployer.phar $@

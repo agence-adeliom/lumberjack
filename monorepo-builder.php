@@ -14,10 +14,6 @@ use Symplify\MonorepoBuilder\Release\ReleaseWorker\UpdateReplaceReleaseWorker;
 
 return static function (MBConfig $mbConfig): void {
     $mbConfig->packageDirectories([__DIR__ . '/packages']);
-    $mbConfig->packageDirectoriesExcludes([
-        __DIR__ . '/packages/lumberjack-project',
-        __DIR__ . '/packages/lumberjack-project/web',
-    ]);
     $mbConfig->defaultBranch('1.x');
 
     $mbConfig->dataToRemove([
