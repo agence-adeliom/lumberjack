@@ -70,8 +70,7 @@ jobs:
         if: matrix.package != 'lumberjack-project'
         run: cd .terraform && terraform apply -auto-approve -var='token=${{ secrets.ACCESS_TOKEN }}' -var='repo=${{ matrix.package }}' -var='branch=${{ env.SPLIT_BRANCH }}'
 
-      # without tag
-      - if: !startsWith(github.ref, 'refs/tags/') && matrix.package != 'lumberjack-project'
+      - if: !startsWith(github.ref, "refs/tags/") && matrix.package != "lumberjack-project"
         name: Monorepo Split of ${{ matrix.package }}
         uses: symplify/monorepo-split-github-action@2.2
         env:
@@ -84,8 +83,7 @@ jobs:
           user_email: ${{ github.event.pusher.email }}
           branch: ${{ env.SPLIT_BRANCH }}
 
-      # with tag
-      - if: startsWith(github.ref, 'refs/tags/') && matrix.package != 'lumberjack-project'
+      - if: startsWith(github.ref, "refs/tags/") && matrix.package != "lumberjack-project"
         name: Monorepo Tagged Split of ${{ matrix.package }}
         uses: symplify/monorepo-split-github-action@2.2
         env:
@@ -99,8 +97,7 @@ jobs:
           user_email: ${{ github.event.pusher.email }}
           branch: ${{ env.SPLIT_BRANCH }}
 
-      # without tag
-      - if: !startsWith(github.ref, 'refs/tags/') && matrix.package == 'lumberjack-project'
+      - if: !startsWith(github.ref, "refs/tags/") && matrix.package == "lumberjack-project"
         name: Monorepo Split of ${{ matrix.package }}
         uses: symplify/monorepo-split-github-action@2.2
         env:
@@ -113,8 +110,7 @@ jobs:
           user_email: ${{ github.event.pusher.email }}
           branch: main
 
-      # with tag
-      - if: startsWith(github.ref, 'refs/tags/') && matrix.package == 'lumberjack-project'
+      - if: startsWith(github.ref, "refs/tags/") && matrix.package == "lumberjack-project"
         name: Monorepo Tagged Split of ${{ matrix.package }}
         uses: symplify/monorepo-split-github-action@2.2
         env:

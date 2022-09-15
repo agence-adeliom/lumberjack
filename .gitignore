@@ -21,3 +21,7 @@ wp-cli.local.yml
 .idea
 .php-cs-fixer.cache
 .phplint.cache
+packages/lumberjack-project/.installer/install.lock
+packages/lumberjack-project/composer.lock
+packages/lumberjack-project/package-lock.json
+packages/lumberjack-project/web/app/themes/adeliom/package-lock.json
