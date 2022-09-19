@@ -29,7 +29,9 @@
         "symfony/polyfill-php74": "^1.26",
         "symfony/polyfill-php80": "^1.26",
         "symfony/polyfill-php81": "^1.26",
-        "symfony/web-link": "^5.4",
+        "symfony/string": "^5.4|^6.0",
+        "symfony/translation-contracts": "^3.0",
+        "symfony/web-link": "^5.4|^6.0",
         "vinkla/extended-acf": "^13.0",
         "vlucas/phpdotenv": "^5.3",
         "wp-cli/wp-cli-bundle": "*",
@@ -59,14 +61,14 @@
         ],
         "psr-4": {
             "Adeliom\\Installer\\": ".installer",
-            "Mono\\": ".monorepo",
             "Adeliom\\Lumberjack\\Admin\\": "packages/lumberjack-admin/src",
             "Adeliom\\Lumberjack\\Assets\\": "packages/lumberjack-assets/src",
             "Adeliom\\Lumberjack\\Blocks\\": "packages/lumberjack-blocks/src",
             "Adeliom\\Lumberjack\\Cron\\": "packages/lumberjack-cron/src",
             "Adeliom\\Lumberjack\\Hooks\\": "packages/lumberjack-hooks/src",
             "Adeliom\\Lumberjack\\Pagination\\": "packages/lumberjack-pagination/src",
-            "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src"
+            "Adeliom\\Lumberjack\\Taxonomy\\": "packages/lumberjack-taxonomy/src",
+            "Mono\\": ".monorepo"
         }
     },
     "repositories": [
