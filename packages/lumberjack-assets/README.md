@@ -147,7 +147,24 @@ add_action( 'wp_enqueue_scripts', function () {
 
 # Get the path of your asset
 {{ asset('images/logo.svg') }}
+
+# Merge html class
+{% set className = "" %}
+{{ className|mergeClass('your-class', "another-class", "...") }}
+
+{% set class = {
+    base: "your-base-class", // base class
+    default: { // default value
+        margin: "sm" 
+    },
+    margin: {
+        xs: "...",
+        sm: "..."
+    }
+}|mergeClass(margin|default("sm"), "your-custom-class")}
+
 ```
 
 ## License
+
 Lumberjack Assets is released under [the MIT License](LICENSE).
