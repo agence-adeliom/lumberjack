@@ -16,7 +16,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/n98/junit-xml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/hello-dolly-fr_fr" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/woocommerce-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/livejournal-importer-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/classic-editor-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/bbpress-fr_fr" />
@@ -24,7 +23,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/wp-jquery-update-test-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/press-this-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/advanced-rich-text-tools-fr_fr" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/health-check-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/akismet-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/buddypress-fr_fr" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/classic-widgets-fr_fr" />
@@ -109,7 +107,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/deployer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-diactoros" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gettext/gettext" />
@@ -210,6 +207,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hellonico/twig-dump-extension" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/health-check-fr_fr" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/koodimonni-plugin-language/woocommerce-fr_fr" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/serializable-closure" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

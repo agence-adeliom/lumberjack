@@ -20,7 +20,6 @@
       <path value="$PROJECT_DIR$/vendor/n98/junit-xml" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/hello-dolly-fr_fr" />
-      <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/woocommerce-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/livejournal-importer-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/classic-editor-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/bbpress-fr_fr" />
@@ -28,7 +27,6 @@
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/wp-jquery-update-test-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/press-this-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/advanced-rich-text-tools-fr_fr" />
-      <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/health-check-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/akismet-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/buddypress-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/classic-widgets-fr_fr" />
@@ -113,7 +111,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/deployer/deployer" />
-      <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/gettext/gettext" />
@@ -214,6 +211,9 @@
       <path value="$PROJECT_DIR$/vendor/ajgl/breakpoint-twig-extension" />
       <path value="$PROJECT_DIR$/vendor/hellonico/twig-dump-extension" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/health-check-fr_fr" />
+      <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/woocommerce-fr_fr" />
+      <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
