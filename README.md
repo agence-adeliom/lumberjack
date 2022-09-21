@@ -1,8 +1,8 @@
-# Wordpress template
-
-## What is included
+# Lumberjack Adeliom Wordpress Starter
 
 ## Installation
+
+Dans le fichier `.lando.yml`, changez le name par le nom de votre projet. Ce sera l'URL locale qui sera générée en fonction de ce nom.
 
 ```bash
 $ lando start
@@ -10,7 +10,7 @@ $ lando start
 
 
 
-###Demande d'authentification lors du composer install 
+### Demande d'authentification lors du composer install 
 
 #### Identifiant
 
