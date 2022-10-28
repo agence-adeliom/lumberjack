@@ -214,6 +214,14 @@
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/health-check-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/koodimonni-plugin-language/woocommerce-fr_fr" />
       <path value="$PROJECT_DIR$/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/vendor/wpackagist-plugin/disable-comments" />
+      <path value="$PROJECT_DIR$/vendor/wpackagist-plugin/worker" />
+      <path value="$PROJECT_DIR$/vendor/wpackagist-plugin/seo-by-rank-math" />
+      <path value="$PROJECT_DIR$/vendor/wpackagist-plugin/wordfence" />
+      <path value="$PROJECT_DIR$/vendor/stayallive/wp-sentry" />
+      <path value="$PROJECT_DIR$/vendor/roots/bedrock-disallow-indexing" />
+      <path value="$PROJECT_DIR$/vendor/roots/wp-stage-switcher" />
+      <path value="$PROJECT_DIR$/vendor/roots/wordpress-no-content" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
