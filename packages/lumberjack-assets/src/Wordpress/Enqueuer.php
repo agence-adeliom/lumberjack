@@ -19,7 +19,6 @@ class Enqueuer
 
         $jses = $assets['js'];
         $csses = $assets['css'];
-
         foreach ($jses as $js) {
             \wp_enqueue_script($js['handle']);
         }
@@ -94,17 +93,20 @@ class Enqueuer
         $jses = $assets['js'];
         $csses = $assets['css'];
 
-        $deps = [];
+        $deps = [
+            'js' => [],
+            'css' => []
+        ];
 
         foreach ($jses as $js) {
             \wp_register_script(
                 $js['handle'],
                 $js['url'],
-                array_merge($config['deps'], $deps),
+                array_merge($config['deps']['js'], $deps['js']),
                 $config['version'],
                 $config['in_footer']
             );
-            $deps[] = $js['handle'];
+            $deps['js'][] = $js['handle'];
             foreach ($js['attributes'] ?? [] as $attr => $value) {
                 \wp_script_add_data($js['handle'], self::ATTRIB_PREFIX . $attr, $value);
             }
@@ -114,11 +116,11 @@ class Enqueuer
             \wp_register_style(
                 $css['handle'],
                 $css['url'],
-                array_merge($config['deps'], $deps),
+                array_merge($config['deps']['css'], $deps['css']),
                 $config['version'],
                 $config['media']
             );
-            $deps[] = $css['handle'];
+            $deps['css'][] = $css['handle'];
             foreach ($css['attributes'] ?? [] as $attr => $value) {
                 \wp_style_add_data($css['handle'], self::ATTRIB_PREFIX . $attr, $value);
             }
@@ -133,7 +135,10 @@ class Enqueuer
             $config,
             [
                 'version' => null,
-                'deps' => [],
+                'deps' => [
+                    'js' => [],
+                    'css' => []
+                ],
                 'in_footer' => true,
                 'media' => 'all',
                 'attributes' => []
