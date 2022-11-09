@@ -6,14 +6,19 @@ use Extended\ACF\Fields\File;
 
 class FileField extends File
 {
-    public const PDF = "pdf";
+    private const PDF = "pdf";
 
-    public static function pdf(string $title = "PDF", string $key = "", string $instructions = ""): static
+    public static function make(string $label, string|null $name = null): static
     {
-        return parent::make(__($title), !empty($key) ? $key : self::PDF)
-            ->instructions($instructions)
-            ->mimeTypes(['pdf'])
-            ->library("all")
-            ->returnFormat('array');
+        return new static($label, $name);
+    }
+
+    public function pdf(): static
+    {
+        $this->settings['name'] = "pdf";
+        $this->settings['mime_types'] = ["pdf"];
+        $this->settings['library'] = "all";
+        $this->settings['return_format'] = "array";
+        return $this;
     }
 }
