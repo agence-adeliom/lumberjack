@@ -9,6 +9,7 @@ class WebpackEntrypointLookup extends EntrypointLookup
 {
     protected function getEntryFiles(string $entryName, string $key): array
     {
+        $this->reset();
         $this->validateEntryName($entryName);
         $entriesData = $this->getEntriesData();
         $entryData = $entriesData['entrypoints'][$entryName] ?? [];
@@ -22,7 +23,6 @@ class WebpackEntrypointLookup extends EntrypointLookup
         $entryFiles = $entryData[$key];
         $newFiles = array_values(array_diff($entryFiles, $this->returnedFiles));
         $this->returnedFiles = array_merge($this->returnedFiles, $newFiles);
-
         return $newFiles;
     }
 

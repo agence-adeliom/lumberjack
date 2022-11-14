@@ -125,7 +125,6 @@ class Enqueuer
                 \wp_style_add_data($css['handle'], self::ATTRIB_PREFIX . $attr, $value);
             }
         }
-
         return $assets;
     }
 
@@ -158,11 +157,8 @@ class Enqueuer
         if (!\in_array($type, ['script', 'style'], true)) {
             throw new \InvalidArgumentException('Type has to be either script or style.');
         }
-
         return 'assets_'
-            . $name
-            . '_'
-            . $path
+            . sanitize_title($path)
             . '_'
             . $type;
     }
