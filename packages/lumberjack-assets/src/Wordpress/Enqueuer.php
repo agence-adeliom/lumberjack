@@ -42,6 +42,7 @@ class Enqueuer
                 \sprintf('Invalid entrypoint "%s"', $entryName)
             );
         }
+
         $entryPointLookup = self::getEntrypointLookup();
         $jsFiles = $entryPointLookup->getJavaScriptFiles($entryName);
         $cssFiles = $entryPointLookup->getCssFiles($entryName);
