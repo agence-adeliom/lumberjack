@@ -210,7 +210,7 @@ class Enqueuer
             }
             $headStr = $dom->saveHTML($dom->getElementsByTagName('head')[0]);
             // Capture content between <head></head>. Kind of hackish, but should be faster than preg_match
-            return substr($headStr, 6, (strlen($headStr) - 14));
+            return substr($headStr, 6, (strlen($headStr) - 13));
         }
 
         return $tag;
