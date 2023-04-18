@@ -8,6 +8,7 @@ use Adeliom\Lumberjack\Assets\Provider\WebpackEntrypointLookup;
 use Adeliom\Lumberjack\Assets\Tag\TagRenderer;
 use Adeliom\Lumberjack\Assets\Twig\ClassTwigExtension;
 use Adeliom\Lumberjack\Assets\Twig\EntryFilesTwigExtension;
+use Adeliom\Lumberjack\Assets\Twig\ImageTwigExtension;
 use Adeliom\Lumberjack\Assets\Wordpress\Enqueuer;
 use Adeliom\Lumberjack\Assets\Wordpress\PreLoadAssets;
 use Rareloop\Lumberjack\Facades\Config as ConfigFacade;
@@ -40,6 +41,7 @@ class AssetsProvider extends ServiceProvider
         add_filter('timber/twig', function ($twig) {
             $twig->addExtension(new EntryFilesTwigExtension());
             $twig->addExtension(new ClassTwigExtension());
+            $twig->addExtension(new ImageTwigExtension());
             return $twig;
         });
 
