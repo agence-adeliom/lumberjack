@@ -21,3 +21,4 @@ wp-cli.local.yml
 .idea
 .php-cs-fixer.cache
 .phplint.cache
+codealike.json

@@ -2,7 +2,7 @@
     "name": "agence-adeliom/lumberjack-blocks",
     "require": {
         "php": ">=8.0.2",
-        "rareloop/lumberjack-core": "^5.0",
+        "rareloop/lumberjack-core": "^5.0|^6.0",
         "agence-adeliom/lumberjack-admin": "^1.1"
     },
     "autoload": {
