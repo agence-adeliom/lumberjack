@@ -8,9 +8,7 @@ Dans le fichier `.lando.yml`, changez le name par le nom de votre projet. Ce ser
 $ lando start
 ```
 
-
-
-### Demande d'authentification lors du composer install 
+### Demande d'authentification lors du composer install
 
 #### Identifiant
 
@@ -54,3 +52,15 @@ $ https://kinsta.com/fr/blog/wp-cli/
 
 - Utiliser le logiciel TablePlus
 - Utiliser l'interface de phpMyAdmin
+
+## Mise à jour du monorepo
+
+* Mettre en place les modifications souhaitées sur les packages
+* Créer un commit contenant les modifications à déployer
+* Exécuter la commande suivante pour déployer les modifications sur les différents repos :
+
+```bash
+$ vendor/bin/monorepo-builder release patch
+```
+
+_Les modifications peuvent mettre un certain temps (2-3 minutes) avant d'apparaître sur les autres repositories_

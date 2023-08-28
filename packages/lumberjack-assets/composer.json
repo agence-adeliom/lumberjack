@@ -5,7 +5,7 @@
     "require": {
         "php": ">=8.0.2",
         "ext-dom": "*",
-        "rareloop/lumberjack-core": "^5.0",
+        "rareloop/lumberjack-core": "^5.0|^6.0",
         "symfony/web-link": "^5.4|^6.0"
     },
     "autoload": {
